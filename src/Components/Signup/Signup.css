@@ -1,0 +1,63 @@
+/* .twitter-icon {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #1d9bf0;
+}  */
+
+.signup-container {
+  width: 41vw;
+  height: 83vh;
+  background-color: #fff;
+  border-radius: 16px;
+}
+
+.logo {
+  align-items: center;
+
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 600px;
+}
+.empty-icon {
+  opacity: 0;
+  margin-top: 15px;
+}
+.twitter-icon {
+  margin-top: 15px;
+  color: #1d9bf0;
+  /* width: 32px;
+  height: 32px; */
+  font-size: 180%;
+}
+
+.close-icon {
+  margin-top: 15px;
+}
+h1 {
+  font-family: inherit;
+  font-size: 31px;
+}
+
+.signup-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "TwitterChirp", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+}
+.signup-btn button {
+  width: 320px;
+  height: 46px;
+  border-radius: 25px;
+  border: 1px solid #dadce0;
+  margin: 25px;
+}
+.line {
+  height: 1px;
+  background-color: black;
+  margin: 10px 0;
+  width: 25%;
+}
