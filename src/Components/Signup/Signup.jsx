@@ -56,7 +56,7 @@ const Signup = () => {
               fontWeight: "600",
             }}
             variant="contained"
-            onClick={() => navigate("/signinform")}
+            onClick={() => navigate("/registrationForm")}
           >
             Create Account
           </Button>

@@ -1,45 +1,43 @@
-import React, { useEffect, useState} from 'react';
-import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
-import Box from '@mui/material/Box';
-import Modal from '@mui/material/Modal';
-import { styled } from '@mui/material/styles';
-import Select from '@mui/material/Select';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import InputLabel from '@mui/material/InputLabel';
-import CloseIcon from '@mui/icons-material/Close';
-import style from './registrationForm.module.css'
-import {useNavigate} from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
+import Box from "@mui/material/Box";
+import Modal from "@mui/material/Modal";
+import { styled } from "@mui/material/styles";
+import Select from "@mui/material/Select";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import InputLabel from "@mui/material/InputLabel";
+import CloseIcon from "@mui/icons-material/Close";
+import style from "./registrationForm.module.css";
+import { useNavigate } from "react-router-dom";
 
 const RegistrationContainer = styled(Box)({
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  padding: '20px',
-  width: '70%',
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  padding: "20px",
+  width: "70%",
 });
 
-const RegistrationForm = styled('form')({
-  display: 'flex',
-  flexDirection: 'column',
-  width: '80%',
-  margin: 'auto',
+const RegistrationForm = styled("form")({
+  display: "flex",
+  flexDirection: "column",
+  width: "80%",
+  margin: "auto",
 });
 
 const RegistrationButton = styled(Button)({
-  marginTop: '20px',
+  marginTop: "20px",
 });
 
 export default function RegistrationPage() {
   const [open, setOpen] = useState(false);
-  const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
-  const [day, setDay] = useState('');
-  const [month, setMonth] = useState('');
-  const [year, setYear] = useState('');
-
-
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [day, setDay] = useState("");
+  const [month, setMonth] = useState("");
+  const [year, setYear] = useState("");
 
   const navigate = useNavigate();
 
@@ -77,25 +75,24 @@ export default function RegistrationPage() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    
-    if(!name === ' '){
-        alert('enter a valid name')
-    }else if(phone.length <= 10){
-        alert('Enter a valid Phone Number')
-    }else if(!day && !month && !year === ''){
-        alert('Enter a valid Date')
-    }else{
-        const inpVal = {
-            name,
-            phone,
-            day,
-            month,
-            year
-        }
-        localStorage.setItem('inpval' ,JSON.stringify(inpVal) )
-        navigate('/signin')
-    }
 
+    if (!name === " ") {
+      alert("enter a valid name");
+    } else if (phone.length <= 10) {
+      alert("Enter a valid Phone Number");
+    } else if (!day && !month && !year === "") {
+      alert("Enter a valid Date");
+    } else {
+      const inpVal = {
+        name,
+        phone,
+        day,
+        month,
+        year,
+      };
+      localStorage.setItem("inpval", JSON.stringify(inpVal));
+      navigate("/signin");
+    }
   };
 
   return (
@@ -107,29 +104,33 @@ export default function RegistrationPage() {
       >
         <Box
           sx={{
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            bgcolor: 'background.paper',
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            bgcolor: "background.paper",
             boxShadow: 24,
             p: 4,
-            minWidth: '30%',
-            maxWidth: '35%',
-            height: '80vh',
-            borderRadius: '1rem',
-            border:'none',
-            outline:'none'
+            minWidth: "30%",
+            maxWidth: "35%",
+            height: "80vh",
+            borderRadius: "1rem",
+            border: "none",
+            outline: "none",
+            lineHeight: "3rem",
           }}
         >
-        <div className={style.topcontent}>
-        <CloseIcon onClick={handleClose}></CloseIcon>
-        <h3>Step 1 of 5</h3>
-        </div>
+          <div className={style.topcontent}>
+            <CloseIcon onClick={handleClose}></CloseIcon>
+            <h3>Step 1 of 5</h3>
+          </div>
           <RegistrationForm onSubmit={handleSubmit}>
             <h1 className={style.headerContent}>Create your account</h1>
-            <TextField placeholder="Name" value={name} onChange={handleNameChange} required 
-                
+            <TextField
+              placeholder="Name"
+              value={name}
+              onChange={handleNameChange}
+              required
             />
             <TextField
               placeholder="Phone"
@@ -138,19 +139,23 @@ export default function RegistrationPage() {
               onChange={handlePhoneChange}
               required
               sx={{
-                marginTop:"1rem"
+                marginTop: "1rem",
               }}
             />
             <p className={style.changeToEmail}>Use email instead</p>
             <h4>Date of birth</h4>
             <p className={style.textContent}>
-              This will not be shown publicly. Confirm your own age, even if this account is for a
-              business, a pet, or something else.
+              This will not be shown publicly. Confirm your own age, even if
+              this account is for a business, a pet, or something else.
             </p>
-            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+            <div style={{ display: "flex", justifyContent: "space-between" }}>
               <FormControl>
                 <InputLabel>Day</InputLabel>
-                <Select value={day} onChange={handleDayChange} style={{ minWidth: '80px' }}>
+                <Select
+                  value={day}
+                  onChange={handleDayChange}
+                  style={{ minWidth: "80px" }}
+                >
                   {Array.from(Array(31), (_, i) => i + 1).map((day) => (
                     <MenuItem key={day} value={day}>
                       {day}
@@ -160,17 +165,27 @@ export default function RegistrationPage() {
               </FormControl>
               <FormControl>
                 <InputLabel>Month</InputLabel>
-                <Select value={month} onChange={handleMonthChange} style={{ minWidth: '100px' }}>
+                <Select
+                  value={month}
+                  onChange={handleMonthChange}
+                  style={{ minWidth: "100px" }}
+                >
                   {Array.from(Array(12), (_, i) => i + 1).map((month) => (
                     <MenuItem key={month} value={month}>
-                      {new Date(0, month).toLocaleString('default', { month: 'long' })}
+                      {new Date(0, month).toLocaleString("default", {
+                        month: "long",
+                      })}
                     </MenuItem>
                   ))}
                 </Select>
               </FormControl>
               <FormControl>
                 <InputLabel>Year</InputLabel>
-                <Select value={year} onChange={handleYearChange} style={{ minWidth: '80px' }}>
+                <Select
+                  value={year}
+                  onChange={handleYearChange}
+                  style={{ minWidth: "80px" }}
+                >
                   {Array.from(Array(121), (_, i) => 2023 - i).map((year) => (
                     <MenuItem key={year} value={year}>
                       {year}
@@ -183,14 +198,13 @@ export default function RegistrationPage() {
               type="submit"
               variant="contained"
               onClick={handleSubmit}
-              
               sx={{
-                borderRadius: '2rem',
-                padding: '0.7rem',
-                fontSize: '1rem',
-                fontWeight: '700',
-                marginTop:'3rem',
-                backgroundColor:'#33302f'
+                borderRadius: "2rem",
+                padding: "0.7rem",
+                fontSize: "1rem",
+                fontWeight: "700",
+                marginTop: "3rem",
+                backgroundColor: "#33302f",
               }}
             >
               Next

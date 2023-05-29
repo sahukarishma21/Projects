@@ -26,7 +26,7 @@ function SignIn() {
         <span>Or</span>
         <form>
           <input type="text" placeholder="Phone email or username" />
-          <button>Next</button>
+          <button onClick={() => navigate("/home")}>Next</button>
         </form>
         <button> Forget Password</button>
         <p>
