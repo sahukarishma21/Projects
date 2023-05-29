@@ -1,0 +1,23 @@
+.topcontent{
+    width: 150px;
+    margin-top: -1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.changeToEmail{
+    display: flex;
+    justify-content: end;
+    color: rgb(0, 128, 255);
+    font-size: 1rem;
+    line-height: 0;
+}
+.textContent{
+    line-height: 1;
+}
+h4{
+    line-height: 1;
+}
+.headerContent{
+    line-height: 1;
+}
