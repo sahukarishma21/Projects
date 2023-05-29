@@ -1,23 +1,25 @@
-.topcontent{
-    width: 150px;
-    margin-top: -1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.topcontent {
+  width: 150px;
+  margin-top: -1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
 }
-.changeToEmail{
-    display: flex;
-    justify-content: end;
-    color: rgb(0, 128, 255);
-    font-size: 1rem;
-    line-height: 0;
+.changeToEmail {
+  display: flex;
+  justify-content: end;
+  color: rgb(0, 128, 255);
+  font-size: 1rem;
+  line-height: 2;
 }
-.textContent{
-    line-height: 1;
+.textContent {
+  line-height: 1;
+  padding-bottom: 15px;
 }
-h4{
-    line-height: 1;
+h4 {
+  line-height: 2;
 }
-.headerContent{
-    line-height: 1;
+.headerContent {
+  line-height: 2;
 }

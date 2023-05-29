@@ -1,16 +1,11 @@
-/* .twitter-icon {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #1d9bf0;
-}  */
-
 .signup-container {
   width: 41vw;
   height: 83vh;
   background-color: #fff;
   border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .logo {
@@ -27,8 +22,7 @@
 .twitter-icon {
   margin-top: 15px;
   color: #1d9bf0;
-  /* width: 32px;
-  height: 32px; */
+
   font-size: 180%;
 }
 
@@ -55,6 +49,7 @@ h1 {
   border: 1px solid #dadce0;
   margin: 25px;
 }
+
 .signup-btn a {
   text-decoration: none;
   color: inherit;
@@ -63,9 +58,49 @@ h1 {
   font-weight: 600;
   font-family: inherit;
 }
-.line {
+
+.Or {
+  background: #fff;
+  width: 300px;
+  margin: 10px;
+}
+
+.Or hr {
+  border: 0;
   height: 1px;
-  background-color: black;
-  margin: 10px 0;
-  width: 25%;
+  background: #c2c2c2;
+  margin: 5px;
+}
+
+.Or span {
+  display: block;
+  width: 40px;
+  margin: auto;
+  background-color: #fff;
+  font-size: 14px;
+  margin-top: -16px;
+}
+.term-text {
+  width: 300px;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 2px;
+  margin-bottom: 40px;
+  color: rgb(94, 94, 94);
+}
+
+.blue {
+  color: #00acee;
+}
+
+.signup-btn button:hover {
+  border: 1px solid black;
+}
+
+p a {
+  text-decoration: none;
+}
+
+p a:hover {
+  text-decoration: underline;
 }

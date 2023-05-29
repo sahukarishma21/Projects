@@ -30,6 +30,7 @@ const Signup = () => {
           <Button
             sx={{
               color: "black",
+              backgroundColor: "aliceblue",
             }}
             variant="outlined"
             size="small"
@@ -40,6 +41,7 @@ const Signup = () => {
           <Button
             sx={{
               color: "black",
+              backgroundColor: "aliceblue",
             }}
             variant="outlined"
             size="small"
@@ -48,12 +50,18 @@ const Signup = () => {
             {" "}
             <a href="https://appleid.apple.com/sign-in">Signup with Apple</a>
           </Button>
-          <span className="line"></span>or<span className="line"></span>
+          <div className="Or">
+            <hr></hr>
+            <span className="Orspan">Or</span>
+          </div>{" "}
           <Button
             sx={{
               backgroundColor: "black",
               color: "white",
               fontWeight: "600",
+              "&:hover": {
+                boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)",
+              },
             }}
             variant="contained"
             onClick={() => navigate("/registrationForm")}
@@ -61,10 +69,16 @@ const Signup = () => {
             Create Account
           </Button>
         </div>
-        <p>
-          By signing up, you agree to the Terms of Service and Privacy Policy,
-          including Cookie Use.
-        </p>
+        <div className="term-text">
+          <p>
+            By signing up, you agree to the{" "}
+            <span className="blue">Terms of Service</span>
+          </p>
+          <p>
+            and <span className="blue">Privacy Policy</span>, including{" "}
+            <span className="blue">Cookie Use.</span>
+          </p>
+        </div>
         <p onClick={() => navigate("/signin")}>
           Have an account already? <a href="#">Log In</a>
         </p>

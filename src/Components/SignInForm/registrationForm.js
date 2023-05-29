@@ -41,6 +41,10 @@ export default function RegistrationPage() {
 
   const navigate = useNavigate();
 
+  const nameRegex = /^[A-Za-z\s]+$/;
+
+  const phoneRegex = /^\d{10}$/;
+
   const handleDayChange = (event) => {
     setDay(event.target.value);
   };
@@ -76,9 +80,9 @@ export default function RegistrationPage() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    if (!name === " ") {
+    if (!nameRegex.test(name.trim())) {
       alert("enter a valid name");
-    } else if (phone.length <= 10) {
+    } else if (!phoneRegex.test(phone)) {
       alert("Enter a valid Phone Number");
     } else if (!day && !month && !year === "") {
       alert("Enter a valid Date");
