@@ -9,7 +9,6 @@ const registrationFormSlice = createSlice({
     month: '',
     year: '',
     password:'',
-    
   },
   reducers: {
     setName: (state, action) => {
@@ -27,12 +26,13 @@ const registrationFormSlice = createSlice({
     setYear: (state, action) => {
       state.year = action.payload;
     },
-    setpassword: (state, action) => {
-      state.password = action.payload;
+    setpassword:(state,action) =>{
+        state.password = action.payload;
     },
-    
   },
 });
+
+
 
 const { setName, setPhone, setDay, setMonth, setYear,setpassword, } = registrationFormSlice.actions;
 
