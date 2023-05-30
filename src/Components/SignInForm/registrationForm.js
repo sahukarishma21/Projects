@@ -79,7 +79,7 @@ export default function RegistrationPage() {
     dispatch(setPhone(event.target.value));
   };
   const handlePasswordChange = (event) => {
-    setpassword(event.target.value);
+    dispatch(setpassword(event.target.value));
   };
 
   const handleSubmit = (event) => {
