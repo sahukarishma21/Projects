@@ -35,13 +35,21 @@ const RegistrationButton = styled(Button)({
 
 export default function RegistrationPage() {
   const [open, setOpen] = useState(false);
+<<<<<<< HEAD
  
   
+=======
+>>>>>>> 4fca42871d65ca165e991c0896cb112b27606e52
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const { name, phone, day, month, year } = useSelector((state) => state.registration);
 
+  const { name, phone, day, month, year } = useSelector((state) => state.registration);
+=======
+  const nameRegex = /^[A-Za-z\s]{1,}[\.]{0,1}[A-Za-z\s]
+
+
+  const passwordRegex = /^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
 
   const handleDayChange = (event) => {
     dispatch(setDay(event.target.value));
@@ -74,6 +82,9 @@ export default function RegistrationPage() {
   const handlePhoneChange = (event) => {
     dispatch(setPhone(event.target.value));
   };
+  const handlePasswordChange = (event) => {
+    setpassword(event.target.value);
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -86,15 +97,18 @@ export default function RegistrationPage() {
       alert("Enter a valid name");
     } else if (!phoneRegex.test(phone)) {
       alert("Enter a valid Phone Number");
-    } else if (!day || !month || !year) {
+     else if (!passwordRegex.test(password)) {
+      alert("Enter a valid Password");
+    } else if (!day && !month && !year === "") {
       alert("Enter a valid Date");
-    } else {
+    }  else {
       const userRegistrationData = {
         name,
         phone,
         day,
         month,
         year,
+        password,
       };
       const storedData = localStorage.getItem("userRegistrationData");
       let newData = [];
@@ -158,6 +172,17 @@ export default function RegistrationPage() {
               type="number"
               value={phone}
               onChange={handlePhoneChange}
+              required
+              sx={{
+                marginTop: "1rem",
+              }}
+            />
+            <TextField
+              placeholder="Enter your password"
+              name="password"
+              type="password"
+              value={password}
+              onChange={handlePasswordChange}
               required
               sx={{
                 marginTop: "1rem",
