@@ -1,0 +1,33 @@
+.sidebar {
+    background-color: #15202b;
+    width: 240px;
+    height: 100vh;
+    padding: 16px;
+  }
+  
+  .twitterIcon {
+    color: #1da1f2;
+    font-size: 2rem;
+    margin-bottom: 16px;
+  }
+  
+  .listItem {
+    padding: 10px 16px;
+    border-radius: 30px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .listItem:hover {
+    background-color: #1c2938;
+  }
+  .listItemIcon {
+    color: #ffffff;
+  }
+  
+  .listItemText {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: bold;
+  }  
