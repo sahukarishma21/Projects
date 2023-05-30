@@ -12,15 +12,8 @@ import CloseIcon from "@mui/icons-material/Close";
 import style from "./registrationForm.module.css";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { setName, setPhone, setDay, setMonth, setYear,setpassword } from "../stores/slices/registrationFormSlice";
 
-import {
-  setName,
-  setPhone,
-  setDay,
-  setMonth,
-  setYear,
-  setpassword,
-} from "../stores/slices/registrationFormSlice";
 
 const RegistrationContainer = styled(Box)({
   display: "flex",
@@ -43,8 +36,14 @@ const RegistrationButton = styled(Button)({
 
 export default function RegistrationPage() {
   const [open, setOpen] = useState(false);
+ 
+  
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+
+
+  const { name, phone, day, month, year,password } = useSelector((state) => state.registration);
 
   const { name, phone, day, month, year, password } = useSelector(
     (state) => state.registration
@@ -93,11 +92,20 @@ export default function RegistrationPage() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
+    
+  const nameRegex = /^[A-Za-z\s]+$/;
+  const phoneRegex = /^[7-9]\d{9}$/;
+
     if (!nameRegex.test(name.trim())) {
       alert("Enter a valid name");
     } else if (!phoneRegex.test(phone)) {
       alert("Enter a valid Phone Number");
+
+    }
+     else if (!passwordRegex.test(password)) {
+
     } else if (!passwordRegex.test(password)) {
+
       alert("Enter a valid Password");
     } else if (!day && !month && !year === "") {
       alert("Enter a valid Date");
@@ -110,10 +118,16 @@ export default function RegistrationPage() {
         year,
         password,
       };
-      localStorage.setItem(
-        "userRegistrationData",
-        JSON.stringify(userRegistrationData)
-      );
+      const storedData = localStorage.getItem("userRegistrationData");
+      let newData = [];
+
+      if (storedData) {
+        newData = JSON.parse(storedData);
+      }
+    
+      newData.push(userRegistrationData);
+      localStorage.setItem("userRegistrationData", JSON.stringify(newData));
+
       setOpen(false);
       navigate("/signin");
     }
@@ -249,9 +263,9 @@ export default function RegistrationPage() {
                 padding: "0.7rem",
                 fontSize: "1rem",
                 fontWeight: "700",
-                marginTop: "3rem",
+                // marginTop: "3rem",
                 backgroundColor: "#33302f",
-                marginTop: "4rem",
+                marginTop: "1rem",
               }}
             >
               Next
