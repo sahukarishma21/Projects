@@ -11,13 +11,15 @@ import InputLabel from "@mui/material/InputLabel";
 import CloseIcon from "@mui/icons-material/Close";
 import style from "./registrationForm.module.css";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { setName, setPhone, setDay, setMonth, setYear } from "../stores/slices/registrationFormSlice";
 
 const RegistrationContainer = styled(Box)({
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
   padding: "20px",
-  width: "70%",
+  width: "100%",
 });
 
 const RegistrationForm = styled("form")({
@@ -33,31 +35,29 @@ const RegistrationButton = styled(Button)({
 
 export default function RegistrationPage() {
   const [open, setOpen] = useState(false);
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [day, setDay] = useState("");
-  const [month, setMonth] = useState("");
-  const [year, setYear] = useState("");
-  const [password, setpassword] = useState(""); // password state
-
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  const nameRegex = /^[A-Za-z\s]{1,}[\.]{0,1}[A-Za-z\s]{0,}$/;
 
+  const { name, phone, day, month, year } = useSelector((state) => state.registration);
+=======
+  const nameRegex = /^[A-Za-z\s]{1,}[\.]{0,1}[A-Za-z\s]
+
+  const nameRegex = /^[A-Za-z\s]+$/;
   const phoneRegex = /^[7-9]\d{9}$/;
 
   const passwordRegex = /^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
 
   const handleDayChange = (event) => {
-    setDay(event.target.value);
+    dispatch(setDay(event.target.value));
   };
 
   const handleMonthChange = (event) => {
-    setMonth(event.target.value);
+    dispatch(setMonth(event.target.value));
   };
 
   const handleYearChange = (event) => {
-    setYear(event.target.value);
+    dispatch(setYear(event.target.value));
   };
 
   const handleOpen = () => {
@@ -73,11 +73,11 @@ export default function RegistrationPage() {
   };
 
   const handleNameChange = (event) => {
-    setName(event.target.value);
+    dispatch(setName(event.target.value));
   };
 
   const handlePhoneChange = (event) => {
-    setPhone(event.target.value);
+    dispatch(setPhone(event.target.value));
   };
   const handlePasswordChange = (event) => {
     setpassword(event.target.value);
@@ -87,10 +87,10 @@ export default function RegistrationPage() {
     event.preventDefault();
 
     if (!nameRegex.test(name.trim())) {
-      alert("enter a valid name");
+      alert("Enter a valid name");
     } else if (!phoneRegex.test(phone)) {
       alert("Enter a valid Phone Number");
-    } else if (!passwordRegex.test(password)) {
+     else if (!passwordRegex.test(password)) {
       alert("Enter a valid Password");
     } else if (!day && !month && !year === "") {
       alert("Enter a valid Date");
@@ -103,10 +103,7 @@ export default function RegistrationPage() {
         year,
         password,
       };
-      localStorage.setItem(
-        "userRegistrationData",
-        JSON.stringify(userRegistrationData)
-      );
+      localStorage.setItem("userRegistrationData", JSON.stringify(userRegistrationData));
       setOpen(false);
       navigate("/signin");
     }
@@ -128,9 +125,9 @@ export default function RegistrationPage() {
             bgcolor: "background.paper",
             boxShadow: 24,
             p: 4,
-            minWidth: "30%",
-            maxWidth: "35%",
-            height: "80vh",
+            minWidth: "40%",
+            maxWidth: "45%",
+            height: "90vh",
             borderRadius: "1rem",
             border: "none",
             outline: "none",
@@ -149,6 +146,9 @@ export default function RegistrationPage() {
               value={name}
               onChange={handleNameChange}
               required
+              sx={{
+                marginTop: "1rem",
+              }}
             />
             <TextField
               placeholder="Phone"
@@ -175,10 +175,9 @@ export default function RegistrationPage() {
             <p className={style.changeToEmail}>Use email instead</p>
             <h4>Date of birth</h4>
             <p className={style.textContent}>
-              This will not be shown publicly. Confirm your own age, even if
-              this account is for a business, a pet, or something else.
+              This will not be shown publicly. Confirm your own age, even if this account is for a business, a pet, or something else.
             </p>
-            <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", marginTop: "2rem" }}>
               <FormControl>
                 <InputLabel>Day</InputLabel>
                 <Select
@@ -202,9 +201,7 @@ export default function RegistrationPage() {
                 >
                   {Array.from(Array(12), (_, i) => i + 1).map((month) => (
                     <MenuItem key={month} value={month}>
-                      {new Date(0, month).toLocaleString("default", {
-                        month: "long",
-                      })}
+                      {new Date(0, month).toLocaleString("default", { month: "long" })}
                     </MenuItem>
                   ))}
                 </Select>
@@ -235,6 +232,7 @@ export default function RegistrationPage() {
                 fontWeight: "700",
                 marginTop: "3rem",
                 backgroundColor: "#33302f",
+                marginTop: "4rem",
               }}
             >
               Next
