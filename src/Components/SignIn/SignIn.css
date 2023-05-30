@@ -1,4 +1,4 @@
-*
+/* *
 {
   margin: 0;
   padding: 0;
@@ -90,4 +90,209 @@ body{
   display: flex;
   flex-direction: column;
   align-items: center;
+} */
+
+.signup-container {
+  width: 36vw;
+  height: 88vh;
+  background-color: #fff;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.signup-logo {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 32vw;
+}
+.signup-logo svg {
+  width: 3rem;
+  height: 3rem;
+}
+
+.empty-icon {
+  opacity: 0;
+  margin-top: 10px;
+}
+.twitter-icon {
+  margin-top: 10px;
+  color: #1d9bf0;
+  font-size: 4rem;
+}
+
+.twitter-icon svg {
+  font-size: 3rem;
+}
+
+.close-icon svg {
+  font-size: 2rem;
+}
+.close-icon {
+  margin-top: 10px;
+}
+
+h1 {
+  font-family: inherit;
+  font-size: 2.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.signup-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "TwitterChirp", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+}
+
+.signup-btn button {
+  color: #fff;
+  background-color: #1d9bf0;
+  height: 4rem;
+  width: 22vw;
+  border-radius: 2rem;
+  margin: 1rem 0;
+  border: none;
+  cursor: pointer;
+}
+
+.signup-btn .Google-btn:hover {
+  border: 1px solid black;
+}
+.signup-btn .Google-btn {
+  color: black;
+  background-color: white;
+  border-radius: 3rem;
+  border: 1px #dadce0 solid;
+  width: 18vw;
+  height: 5.8vh;
+  margin: 0.9rem 0;
+}
+.signup-btn .Apple-btn {
+  color: black;
+  background-color: white;
+  border: 1px #dadce0 solid;
+  width: 18vw;
+  height: 5.8vh;
+  border-radius: 3rem;
+  margin: 0.9rem 0;
+}
+.signup-btn .Google-btn:hover {
+  border: 1px solid black;
+  background-color: aliceblue;
+}
+
+.signup-btn .Apple-btn:hover {
+  border: black 1px solid;
+  background-color: aliceblue;
+}
+
+.signup-btn .create-btn {
+  background-color: black;
+  color: white;
+  font-weight: 600;
+  width: 18vw;
+  height: 5.8vh;
+  border-radius: 3rem;
+  margin: 0.9rem 0;
+}
+.signup-btn .create-btn:hover {
+  box-shadow: 5px 5px 0px 0px rgb(23, 22, 22);
+  background-color: #3a3b3c;
+}
+
+.Or {
+  background: #fff;
+  width: 400px;
+  margin: 10px;
+}
+
+.Or hr {
+  border: 0;
+  height: 1px;
+  background: #c2c2c2;
+  margin: 5px;
+}
+
+.Or span {
+  display: block;
+  width: 40px;
+  margin: auto;
+  background-color: #fff;
+  font-size: 14px;
+  margin-top: -16px;
+}
+.term-text {
+  width: 300px;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 2px;
+  margin-bottom: 40px;
+  color: rgb(94, 94, 94);
+}
+
+.blue {
+  color: #00acee;
+}
+p a {
+  text-decoration: none;
+}
+
+.Signininput .Signin-input {
+  width: 16vw;
+  margin: 0.7rem;
+}
+.Signininput {
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (max-width: 768px) {
+  .signup-container {
+    width: 80vw;
+    height: 90vh;
+  }
+
+  .signup-logo {
+    width: 70vw;
+  }
+
+  .signup-logo svg {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .twitter-icon {
+    font-size: 3.5rem;
+  }
+
+  .close-icon svg {
+    font-size: 1.5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .signup-btn button {
+    width: 60vw;
+  }
+
+  .signup-btn .Google-btn,
+  .signup-btn .Apple-btn,
+  .signup-btn .create-btn {
+    width: 50vw;
+  }
+
+  .Or {
+    width: 250px;
+  }
+
+  .term-text {
+    width: 250px;
+    font-size: 12px;
+  }
 }

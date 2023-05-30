@@ -8,42 +8,12 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setPhone } from "../stores/slices/registrationFormSlice";
 import "./Signup.css";
-import { styled } from "@mui/material/styles";
+// import { styled } from "@mui/material/styles";
 
 const Signup = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { phone } = useSelector((state) => state.registration);
-
-  const SignupContainer = styled(Box)({
-    width: "41vw",
-    height: "83vh",
-    backgroundColor: "#fff",
-    borderRadius: "16px",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-  });
-  const Logobox = styled(Box)({
-    alignItems: "center",
-    display: "flex",
-    justifyContent: "space-between",
-    margin: "0 auto",
-    width: "700px",
-  });
-  const SignupButton = styled(Box)({
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    fontFamily: "TwitterChirp",
-    width: "22vw",
-    height: "5vh",
-    borderRadius: " 4rem",
-  });
-
-  // const handlePhoneChange = (event) => {
-  //   dispatch(setPhone(event.target.value));
-  // };
 
   const handleSignup = (e) => {
     e.preventDefault();
@@ -60,32 +30,24 @@ const Signup = () => {
 
   return (
     <Box>
-      <SignupContainer>
-        <Logobox className="logo">
+      <Box selected className="signup-container">
+        <Box selected className="signup-logo">
           <span className="close-icon">
             <CloseIcon />
           </span>
           <span className="twitter-icon">
-            <TwitterIcon sx={{ fontSize: "30px" }} />
+            <TwitterIcon />
           </span>
           <span className="empty-icon">
             <TwitterIcon />
           </span>
-        </Logobox>
+        </Box>
         <h1>Join Twitter today</h1>
-        <SignupButton>
+        <Box selected className="signup-btn">
           <Button
-            sx={{
-              color: "black",
-              backgroundColor: "aliceblue",
-
-              maxHeight: "38vh",
-              width: "22vw",
-              borderRadius: "2rem",
-              margin: "1rem 0",
-            }}
+            selected
+            className="Google-btn"
             variant="outlined"
-            size="small"
             startIcon={<GoogleIcon />}
             component="a"
             href="https://accounts.google.com/signin"
@@ -93,66 +55,54 @@ const Signup = () => {
             Signup with Google
           </Button>
           <Button
-            sx={{
-              color: "black",
-              backgroundColor: "aliceblue",
-
-              maxHeight: "38vh",
-              width: "22vw",
-              borderRadius: "2rem",
-              margin: "1rem 0",
-            }}
+            selected
+            className="Apple-btn"
             variant="outlined"
-            size="small"
             startIcon={<AppleIcon />}
             component="a"
             href="https://appleid.apple.com/sign-in"
           >
             Signup with Apple
           </Button>
-          <Box className="Or">
+          <Box selected className="Or">
             <Divider />
-            <Typography variant="body1" className="Orspan">
+            <span variant="body1" selected className="Orspan">
               Or
-            </Typography>
-          </Box>{" "}
+            </span>
+          </Box>
           <Button
-            sx={{
-              backgroundColor: "black",
-              color: "white",
-              fontWeight: "600",
-              "&:hover": {
-                boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)",
-              },
-            }}
-            variant="contained"
+            selected
+            className="create-btn"
+            variant="outline"
             onClick={handleSignup}
           >
             Create Account
           </Button>
-        </SignupButton>
-        <Box className="term-text">
-          <Typography variant="body1">
-            By signing up, you agree to the{" "}
-            <Typography variant="body1" component="span" className="blue">
-              Terms of Service
-            </Typography>
-          </Typography>
-          <Typography variant="body1">
-            and{" "}
-            <Typography variant="body1" component="span" className="blue">
-              Privacy Policy
-            </Typography>
-            , including{" "}
-            <Typography variant="body1" component="span" className="blue">
-              Cookie Use.
-            </Typography>
-          </Typography>
         </Box>
-        <Typography variant="body1" onClick={() => navigate("/signin")}>
-          Have an account already? <a href="#">Log In</a>
-        </Typography>
-      </SignupContainer>
+
+        <Box selected className="term-text">
+          <p>
+            By signing up, you agree to the
+            <span selected className="blue">
+              Terms of Service
+            </span>
+          </p>
+          <p>
+            and
+            <span selected className="blue">
+              Privacy Policy
+            </span>
+            , including
+            <span className="blue">Cookie Use.</span>
+          </p>
+        </Box>
+        <p onClick={() => navigate("/signin")}>
+          Have an account already?{" "}
+          <a className="blue" href="#">
+            Log In
+          </a>
+        </p>
+      </Box>
     </Box>
   );
 };
