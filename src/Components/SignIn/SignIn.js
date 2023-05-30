@@ -9,36 +9,41 @@ import { useNavigate } from "react-router-dom";
 function SignIn() {
   const navigate = useNavigate();
 
-  const [phone, setPhone] = useState(""); // Added phone state
+  const [phone, setPhone] = useState(""); // phonenumber state
+  const [password, setpassword] = useState(""); // password state
 
   const phoneRegex = /^[7-9]\d{9}$/;
+
+  const passwordRegex = /^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
 
   const handlePhoneChange = (event) => {
     setPhone(event.target.value);
   };
-
-
+  const handlePasswordChange = (event) => {
+    setpassword(event.target.value);
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-  
+
     if (!phoneRegex.test(phone)) {
       alert("Enter a valid Phone Number");
+    } else if (!passwordRegex.test(password)) {
+      alert("Enter a valid password");
     } else {
       const userRegistrationData = JSON.parse(
         localStorage.getItem("userRegistrationData")
       );
-  
+
       if (userRegistrationData && userRegistrationData.phone === phone) {
         // Successful login
         navigate("/home");
       } else {
-        alert("Invalid phone number or user not registered");
+        alert("User not registered");
       }
     }
   };
 
- 
   return (
     <div className="App">
       <div className="logo-box">
@@ -61,7 +66,13 @@ function SignIn() {
             placeholder="Phone email or username"
             value={phone}
             onChange={handlePhoneChange}
-
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Enter your password"
+            value={password}
+            onChange={handlePasswordChange}
           />
           <button onClick={handleSubmit}>Next</button>
         </form>
