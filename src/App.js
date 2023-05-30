@@ -1,7 +1,6 @@
 import Signup from "./Components/Signup/Signup.jsx";
 import "./App.css";
 import SignIn from "./Components/SignIn/SignIn.js";
-
 import Sidebar from "./Components/Sidebar/Sidebar.js";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import RegistrationPage from "./Components/SignInForm/registrationForm.js";

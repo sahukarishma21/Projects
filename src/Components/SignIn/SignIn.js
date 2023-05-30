@@ -33,7 +33,7 @@ function SignIn() {
         // Successful login
         navigate("/home");
       } else {
-        alert("Invalid phone number or user not registered");
+        alert("User not registered");
       }
     }
   };

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { AiFillApple } from "react-icons/ai";
 import { Button } from "@mui/material";
@@ -10,7 +10,22 @@ import "./Signup.css";
 
 const Signup = () => {
   const navigate = useNavigate();
+  const [phone, setPhone] = useState("");
 
+  const handleSignup = (e) => {
+    e.preventDefault();
+    const userData = {
+      
+      name: "",
+      email: "",
+      phone: "",
+     
+    };
+
+    localStorage.setItem(phone, JSON.stringify(userData));
+
+    navigate("/registrationForm");
+  };
   return (
     <div>
       <div className="signup-container">
@@ -64,7 +79,7 @@ const Signup = () => {
               },
             }}
             variant="contained"
-            onClick={() => navigate("/registrationForm")}
+            onClick={handleSignup}
           >
             Create Account
           </Button>
