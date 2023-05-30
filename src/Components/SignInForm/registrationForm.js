@@ -12,7 +12,15 @@ import CloseIcon from "@mui/icons-material/Close";
 import style from "./registrationForm.module.css";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { setName, setPhone, setDay, setMonth, setYear } from "../stores/slices/registrationFormSlice";
+
+import {
+  setName,
+  setPhone,
+  setDay,
+  setMonth,
+  setYear,
+  setpassword,
+} from "../stores/slices/registrationFormSlice";
 
 const RegistrationContainer = styled(Box)({
   display: "flex",
@@ -38,13 +46,12 @@ export default function RegistrationPage() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-
-  const { name, phone, day, month, year } = useSelector((state) => state.registration);
-=======
-  const nameRegex = /^[A-Za-z\s]{1,}[\.]{0,1}[A-Za-z\s]
+  const { name, phone, day, month, year, password } = useSelector(
+    (state) => state.registration
+  );
 
   const nameRegex = /^[A-Za-z\s]+$/;
-  const phoneRegex = /^[7-9]\d{9}$/;
+  const phoneRegex = /^[6-9]\d{9}$/;
 
   const passwordRegex = /^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
 
@@ -69,7 +76,7 @@ export default function RegistrationPage() {
   }, []);
 
   const handleClose = () => {
-    setOpen(false);
+    dispatch(setOpen(false));
   };
 
   const handleNameChange = (event) => {
@@ -80,7 +87,7 @@ export default function RegistrationPage() {
     dispatch(setPhone(event.target.value));
   };
   const handlePasswordChange = (event) => {
-    setpassword(event.target.value);
+    dispatch(setpassword(event.target.value));
   };
 
   const handleSubmit = (event) => {
@@ -90,11 +97,11 @@ export default function RegistrationPage() {
       alert("Enter a valid name");
     } else if (!phoneRegex.test(phone)) {
       alert("Enter a valid Phone Number");
-     else if (!passwordRegex.test(password)) {
+    } else if (!passwordRegex.test(password)) {
       alert("Enter a valid Password");
     } else if (!day && !month && !year === "") {
       alert("Enter a valid Date");
-    }  else {
+    } else {
       const userRegistrationData = {
         name,
         phone,
@@ -103,7 +110,10 @@ export default function RegistrationPage() {
         year,
         password,
       };
-      localStorage.setItem("userRegistrationData", JSON.stringify(userRegistrationData));
+      localStorage.setItem(
+        "userRegistrationData",
+        JSON.stringify(userRegistrationData)
+      );
       setOpen(false);
       navigate("/signin");
     }
@@ -175,9 +185,16 @@ export default function RegistrationPage() {
             <p className={style.changeToEmail}>Use email instead</p>
             <h4>Date of birth</h4>
             <p className={style.textContent}>
-              This will not be shown publicly. Confirm your own age, even if this account is for a business, a pet, or something else.
+              This will not be shown publicly. Confirm your own age, even if
+              this account is for a business, a pet, or something else.
             </p>
-            <div style={{ display: "flex", justifyContent: "space-between", marginTop: "2rem" }}>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                marginTop: "2rem",
+              }}
+            >
               <FormControl>
                 <InputLabel>Day</InputLabel>
                 <Select
@@ -201,7 +218,9 @@ export default function RegistrationPage() {
                 >
                   {Array.from(Array(12), (_, i) => i + 1).map((month) => (
                     <MenuItem key={month} value={month}>
-                      {new Date(0, month).toLocaleString("default", { month: "long" })}
+                      {new Date(0, month).toLocaleString("default", {
+                        month: "long",
+                      })}
                     </MenuItem>
                   ))}
                 </Select>

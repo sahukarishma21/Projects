@@ -1,4 +1,4 @@
-.signup-container {
+/* .signup-container {
   width: 41vw;
   height: 83vh;
   background-color: #fff;
@@ -41,7 +41,11 @@ h1 {
   align-items: center;
   font-family: "TwitterChirp", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Helvetica, Arial, sans-serif;
+  width: 22vw;
+  height: 5vh;
+  border-radius: 4rem;
 }
+
 .signup-btn button {
   width: 320px;
   height: 46px;
@@ -103,4 +107,30 @@ p a {
 
 p a:hover {
   text-decoration: underline;
+} */
+
+/* ================ */
+.close-icon {
+  margin-top: 15px;
+}
+.close-icon svg {
+  font-size: 2rem;
+}
+.empty-icon {
+  opacity: 0;
+  margin-top: 15px;
+}
+.twitter-icon {
+  margin-top: 15px;
+  color: #1d9bf0;
+  font-size: 4rem;
+}
+.twitter-icon svg {
+  font-size: 3rem;
+}
+h1 {
+  font-family: inherit;
+  font-size: 2.5rem;
+  letter-spacing: 0.12rem;
+  word-spacing: 0.2rem;
 }
