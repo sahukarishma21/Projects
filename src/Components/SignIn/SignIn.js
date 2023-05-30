@@ -5,22 +5,32 @@ import { AiFillApple } from "react-icons/ai";
 import { BsTwitter } from "react-icons/bs";
 import { IoMdClose } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import {
+   setPhone,
+  setpassword,
+} from "../stores/slices/registrationFormSlice";
 
 function SignIn() {
   const navigate = useNavigate();
+  const {  phone, password } = useSelector(
+    (state) => state.registration
+  );
+  const dispatch = useDispatch();
 
-  const [phone, setPhone] = useState(""); // phonenumber state
-  const [password, setpassword] = useState(""); // password state
+
+  // const [phone, setPhone] = useState(""); // phonenumber state
+  // const [password, setpassword] = useState(""); // password state
 
   const phoneRegex = /^[7-9]\d{9}$/;
 
   const passwordRegex = /^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
 
   const handlePhoneChange = (event) => {
-    setPhone(event.target.value);
+    dispatch(setPhone(event.target.value));
   };
   const handlePasswordChange = (event) => {
-    setpassword(event.target.value);
+    dispatch(setpassword(event.target.value));
   };
 
   const handleSubmit = (event) => {

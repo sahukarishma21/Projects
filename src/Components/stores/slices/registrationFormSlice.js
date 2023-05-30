@@ -32,7 +32,9 @@ const registrationFormSlice = createSlice({
   },
 });
 
-const { setName, setPhone, setDay, setMonth, setYear,setpassword } = registrationFormSlice.actions;
+
+
+const { setName, setPhone, setDay, setMonth, setYear,setpassword, } = registrationFormSlice.actions;
 
 export default registrationFormSlice.reducer;
-export { setName, setPhone, setDay, setMonth, setYear,setpassword };
+export { setName, setPhone, setDay, setMonth, setYear, setpassword};
