@@ -43,7 +43,7 @@ export default function RegistrationPage() {
 
   const nameRegex = /^[A-Za-z\s]+$/;
 
-  const phoneRegex = /^\d{10}$/;
+  const phoneRegex = /^[7-9]\d{9}$/;
 
   const handleDayChange = (event) => {
     setDay(event.target.value);
@@ -87,14 +87,18 @@ export default function RegistrationPage() {
     } else if (!day && !month && !year === "") {
       alert("Enter a valid Date");
     } else {
-      const inpVal = {
+      const userRegistrationData = {
         name,
         phone,
         day,
         month,
         year,
       };
-      localStorage.setItem("inpval", JSON.stringify(inpVal));
+      localStorage.setItem(
+        "userRegistrationData",
+        JSON.stringify(userRegistrationData)
+      );
+      setOpen(false);
       navigate("/signin");
     }
   };
@@ -132,14 +136,16 @@ export default function RegistrationPage() {
             <h1 className={style.headerContent}>Create your account</h1>
             <TextField
               placeholder="Name"
+              name='name'
               value={name}
               onChange={handleNameChange}
               required
             />
             <TextField
               placeholder="Phone"
-              type="Phone"
-              value={phone}
+              name='phone'
+              type="number"
+              value={phone}x
               onChange={handlePhoneChange}
               required
               sx={{
