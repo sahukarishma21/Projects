@@ -35,14 +35,13 @@ const RegistrationButton = styled(Button)({
 
 export default function RegistrationPage() {
   const [open, setOpen] = useState(false);
+ 
   
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const { name, phone, day, month, year } = useSelector((state) => state.registration);
 
-  const nameRegex = /^[A-Za-z\s]+$/;
-  const phoneRegex = /^[7-9]\d{9}$/;
 
   const handleDayChange = (event) => {
     dispatch(setDay(event.target.value));
@@ -79,6 +78,10 @@ export default function RegistrationPage() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
+    
+  const nameRegex = /^[A-Za-z\s]+$/;
+  const phoneRegex = /^[7-9]\d{9}$/;
+
     if (!nameRegex.test(name.trim())) {
       alert("Enter a valid name");
     } else if (!phoneRegex.test(phone)) {
@@ -93,7 +96,16 @@ export default function RegistrationPage() {
         month,
         year,
       };
-      localStorage.setItem("userRegistrationData", JSON.stringify(userRegistrationData));
+      const storedData = localStorage.getItem("userRegistrationData");
+      let newData = [];
+
+      if (storedData) {
+        newData = JSON.parse(storedData);
+      }
+    
+      newData.push(userRegistrationData);
+      localStorage.setItem("userRegistrationData", JSON.stringify(newData));
+
       setOpen(false);
       navigate("/signin");
     }
