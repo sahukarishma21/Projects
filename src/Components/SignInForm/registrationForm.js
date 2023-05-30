@@ -12,7 +12,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import style from "./registrationForm.module.css";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { setName, setPhone, setDay, setMonth, setYear } from "../stores/slices/registrationFormSlice";
+import { setName, setPhone, setDay, setMonth, setYear,setpassword } from "../stores/slices/registrationFormSlice";
 
 const RegistrationContainer = styled(Box)({
   display: "flex",
@@ -35,18 +35,14 @@ const RegistrationButton = styled(Button)({
 
 export default function RegistrationPage() {
   const [open, setOpen] = useState(false);
-<<<<<<< HEAD
  
   
-=======
->>>>>>> 4fca42871d65ca165e991c0896cb112b27606e52
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
 
-  const { name, phone, day, month, year } = useSelector((state) => state.registration);
-=======
-  const nameRegex = /^[A-Za-z\s]{1,}[\.]{0,1}[A-Za-z\s]
+  const { name, phone, day, month, year,password } = useSelector((state) => state.registration);
+  // const nameRegex = /^[A-Za-z\s]{1,}[\.]{0,1}[A-Za-z\s]
 
 
   const passwordRegex = /^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
@@ -97,6 +93,7 @@ export default function RegistrationPage() {
       alert("Enter a valid name");
     } else if (!phoneRegex.test(phone)) {
       alert("Enter a valid Phone Number");
+    }
      else if (!passwordRegex.test(password)) {
       alert("Enter a valid Password");
     } else if (!day && !month && !year === "") {
@@ -246,9 +243,9 @@ export default function RegistrationPage() {
                 padding: "0.7rem",
                 fontSize: "1rem",
                 fontWeight: "700",
-                marginTop: "3rem",
+                // marginTop: "3rem",
                 backgroundColor: "#33302f",
-                marginTop: "4rem",
+                marginTop: "1rem",
               }}
             >
               Next
