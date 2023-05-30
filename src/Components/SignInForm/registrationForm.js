@@ -38,12 +38,15 @@ export default function RegistrationPage() {
   const [day, setDay] = useState("");
   const [month, setMonth] = useState("");
   const [year, setYear] = useState("");
+  const [password, setpassword] = useState(""); // password state
 
   const navigate = useNavigate();
 
-  const nameRegex = /^[A-Za-z\s]+$/;
+  const nameRegex = /^[A-Za-z\s]{1,}[\.]{0,1}[A-Za-z\s]{0,}$/;
 
   const phoneRegex = /^[7-9]\d{9}$/;
+
+  const passwordRegex = /^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
 
   const handleDayChange = (event) => {
     setDay(event.target.value);
@@ -76,6 +79,9 @@ export default function RegistrationPage() {
   const handlePhoneChange = (event) => {
     setPhone(event.target.value);
   };
+  const handlePasswordChange = (event) => {
+    setpassword(event.target.value);
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -84,15 +90,18 @@ export default function RegistrationPage() {
       alert("enter a valid name");
     } else if (!phoneRegex.test(phone)) {
       alert("Enter a valid Phone Number");
+    } else if (!passwordRegex.test(password)) {
+      alert("Enter a valid Password");
     } else if (!day && !month && !year === "") {
       alert("Enter a valid Date");
-    } else {
+    }  else {
       const userRegistrationData = {
         name,
         phone,
         day,
         month,
         year,
+        password,
       };
       localStorage.setItem(
         "userRegistrationData",
@@ -136,17 +145,28 @@ export default function RegistrationPage() {
             <h1 className={style.headerContent}>Create your account</h1>
             <TextField
               placeholder="Name"
-              name='name'
+              name="name"
               value={name}
               onChange={handleNameChange}
               required
             />
             <TextField
               placeholder="Phone"
-              name='phone'
+              name="phone"
               type="number"
-              value={phone}x
+              value={phone}
               onChange={handlePhoneChange}
+              required
+              sx={{
+                marginTop: "1rem",
+              }}
+            />
+            <TextField
+              placeholder="Enter your password"
+              name="password"
+              type="password"
+              value={password}
+              onChange={handlePasswordChange}
               required
               sx={{
                 marginTop: "1rem",
