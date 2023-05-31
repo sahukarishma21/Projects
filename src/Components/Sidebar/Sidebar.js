@@ -20,6 +20,7 @@ function Sidebar() {
     <Follow/>
           <TwitterIcon className="sidebar__twitterIcon" />
 
+<div className="scrollbar">
       <SidebarOption Icon={HomeRoundedIcon} text="Home" />
       <SidebarOption Icon={TagIcon} text= "Explore" />
       <SidebarOption Icon={NotificationsNoneSharpIcon} text= "Notifications" />
@@ -29,12 +30,17 @@ function Sidebar() {
       <SidebarOption Icon={PermIdentityRoundedIcon} text= "Profile" />
       <SidebarOption Icon={MoreHorizRoundedIcon} text= "More" />
       
+
       {/* Button -> Tweet */}
-      <Button varient="contained" className="sidebar__tweet" fullWidth>
+      <Button variant="contained" className="sidebar__tweet" fullWidth>
        Tweet
       </Button>
 </div>
+<<<<<<< HEAD
+</div>
+=======
 
+>>>>>>> 290a0283e24bcd15be101a7c8daa3d50e40f76b6
   );
   
 }
