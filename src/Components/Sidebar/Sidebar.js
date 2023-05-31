@@ -13,6 +13,7 @@ import {
   Notifications,
 } from "@material-ui/icons";
 import { List, ListItem, ListItemIcon, ListItemText } from "@material-ui/core";
+import FetchData from "../FetchData";
 
 const useStyles = makeStyles((theme) => ({
   Sidebar: {
@@ -30,8 +31,8 @@ const Sidebar = () => {
   const classes = useStyles();
 
   return (
-    
     <div component={classes.Sidebar}>
+      <FetchData />
       <List component="nav" aria-label="main mailbox folders">
         <ListItem button>
           <ListItemIcon>
