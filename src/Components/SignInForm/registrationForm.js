@@ -43,7 +43,7 @@ export default function RegistrationPage() {
 
 
 
-  const { name, phone, day, month, year,password } = useSelector((state) => state.registration);
+  // const { name, phone, day, month, year,password } = useSelector((state) => state.registration);
 
   const { name, phone, day, month, year, password } = useSelector(
     (state) => state.registration
@@ -100,9 +100,6 @@ export default function RegistrationPage() {
       alert("Enter a valid name");
     } else if (!phoneRegex.test(phone)) {
       alert("Enter a valid Phone Number");
-
-    }
-     else if (!passwordRegex.test(password)) {
 
     } else if (!passwordRegex.test(password)) {
 
