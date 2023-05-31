@@ -1,29 +1,17 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
-import './db.json'
+import { createAsyncThunk } from "@reduxjs/toolkit";
 
-function GetTweets() {
-  const [users, setUsers] = useState([]);
 
-  useEffect(() => {
-    axios
-      .get("/db.json")
-      .then((res) => setUsers(res.data))
-      .catch((err) => console.log(err));
-      console.log(users)
-  }, []);
-
-  return (
-    <div>
-      <ul>
-        {users.map((user, index) => (
-          <li key={index}>
-            #{user.id}: {user.first_name} {user.last_name}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
-
-export default GetTweets;
+export const fetchTweets = createAsyncThunk('tweet/fetchTweets',async()=>{
+    try{
+        const response = await fetch("../db.json");
+        if(!response.ok){
+            throw new Error ('failed to fetch Tweets');
+        }
+        const data = await response.json();
+        const tweets = data;
+        console.log(tweets)
+        return tweets ;
+    }catch(error){
+        throw new Error('Failed to fetch Tweets')
+    }
+});
