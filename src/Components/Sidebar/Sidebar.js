@@ -1,4 +1,4 @@
-
+import React from "react";
 import "./sidebar.css";
 import TwitterIcon from '@mui/icons-material/Twitter';
 import SidebarOption from "./Sidebaroption";
@@ -13,14 +13,12 @@ import PermIdentityRoundedIcon from '@mui/icons-material/PermIdentityRounded';
 import Button from '@mui/material/Button';
 import Follow from "../follow/follow";
 
-
 function Sidebar() {
   
   return(
     <div className="sidebar">
     <Follow/>
-    
-      <TwitterIcon className="sidebar__twitterIcon" />
+          <TwitterIcon className="sidebar__twitterIcon" />
 
       <SidebarOption Icon={HomeRoundedIcon} text="Home" />
       <SidebarOption Icon={TagIcon} text= "Explore" />
@@ -36,6 +34,7 @@ function Sidebar() {
        Tweet
       </Button>
 </div>
+
   );
   
 }
