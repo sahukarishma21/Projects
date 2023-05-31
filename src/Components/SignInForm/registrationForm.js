@@ -15,12 +15,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { setName, setPhone, setDay, setMonth, setYear,setpassword } from "../stores/slices/registrationFormSlice";
 
 
+
 const RegistrationContainer = styled(Box)({
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
   padding: "20px",
-  width: "100%",
+
+ 
 });
 
 const RegistrationForm = styled("form")({
@@ -43,7 +45,7 @@ export default function RegistrationPage() {
 
 
 
-  // const { name, phone, day, month, year,password } = useSelector((state) => state.registration);
+  const { name, phone, day, month, year,password } = useSelector((state) => state.registration);
 
   const nameRegex = /^[A-Za-z\s]+$/;
   const phoneRegex = /^[6-9]\d{9}$/;
@@ -143,12 +145,14 @@ export default function RegistrationPage() {
             boxShadow: 24,
             p: 4,
             minWidth: "40%",
-            maxWidth: "45%",
-            height: "90vh",
+            maxWidth: "40%",
+            height: "90%",
             borderRadius: "1rem",
             border: "none",
             outline: "none",
-            lineHeight: "3rem",
+            boxSizing:'border-box',
+
+            
           }}
         >
           <div className={style.topcontent}>
@@ -156,7 +160,7 @@ export default function RegistrationPage() {
             <h3>Step 1 of 5</h3>
           </div>
           <RegistrationForm onSubmit={handleSubmit}>
-            <h1 className={style.headerContent}>Create your account</h1>
+            <h2 className={style.headerContent}>Create your account</h2>
             <TextField
               placeholder="Name"
               name="name"
@@ -170,7 +174,7 @@ export default function RegistrationPage() {
             <TextField
               placeholder="Phone"
               name="phone"
-              type="number"
+              type="phone"
               value={phone}
               onChange={handlePhoneChange}
               required
@@ -178,7 +182,7 @@ export default function RegistrationPage() {
                 marginTop: "1rem",
               }}
             />
-            <TextField
+            {/* <TextField
               placeholder="Enter your password"
               name="password"
               type="password"
@@ -188,7 +192,7 @@ export default function RegistrationPage() {
               sx={{
                 marginTop: "1rem",
               }}
-            />
+            /> */}
             <p className={style.changeToEmail}>Use email instead</p>
             <h4>Date of birth</h4>
             <p className={style.textContent}>
@@ -199,7 +203,7 @@ export default function RegistrationPage() {
               style={{
                 display: "flex",
                 justifyContent: "space-between",
-                marginTop: "2rem",
+                // marginTop: "2rem",
               }}
             >
               <FormControl>
@@ -256,7 +260,6 @@ export default function RegistrationPage() {
                 padding: "0.7rem",
                 fontSize: "1rem",
                 fontWeight: "700",
-                // marginTop: "3rem",
                 backgroundColor: "#33302f",
                 marginTop: "1rem",
               }}
