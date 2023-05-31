@@ -1,33 +1,29 @@
 .sidebar {
-    background-color: #15202b;
-    width: 240px;
-    height: 100vh;
-    padding: 16px;
+    border-right: 1px solid var(--twitter-background);
+    flex: 0.3;
+    /* min-width: 250px; */
+    margin-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
   
-  .twitterIcon {
-    color: #1da1f2;
-    font-size: 2rem;
-    margin-bottom: 16px;
+
+  .sidebar__twitterIcon {
+    color: var(--twitter-color);
+    font-size: 30px;
+    margin-left: 20px;
+    margin-bottom: 20px;
   }
-  
-  .listItem {
-    padding: 10px 16px;
+
+  .sidebar__tweet {
+    background-color: #50b7f5;
+    border: none;
+    color: white;
+    font-weight: 900;
+    text-transform: inherit;
     border-radius: 30px;
-    margin-bottom: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
+    height: 50px;
+    margin-top: 20px;
   }
-  
-  .listItem:hover {
-    background-color: #1c2938;
-  }
-  .listItemIcon {
-    color: #ffffff;
-  }
-  
-  .listItemText {
-    color: #ffffff;
-    font-size: 15px;
-    font-weight: bold;
-  }  
+ 
+   

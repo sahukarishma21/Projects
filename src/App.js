@@ -8,6 +8,7 @@ import { Provider } from "react-redux";
 import store from './Components/stores/index.js';
 import Protected from "./Components/protected/protected.js";
 
+
 function App() {
   return (
     <div className="App">
