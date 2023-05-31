@@ -45,10 +45,6 @@ export default function RegistrationPage() {
 
   // const { name, phone, day, month, year,password } = useSelector((state) => state.registration);
 
-  const { name, phone, day, month, year, password } = useSelector(
-    (state) => state.registration
-  );
-
   const nameRegex = /^[A-Za-z\s]+$/;
   const phoneRegex = /^[6-9]\d{9}$/;
 
