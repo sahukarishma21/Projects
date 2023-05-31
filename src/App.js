@@ -7,6 +7,7 @@ import RegistrationPage from "./Components/SignInForm/registrationForm.js";
 import { Provider } from "react-redux";
 import store from './Components/stores/index.js';
 import Protected from "./Components/protected/protected.js";
+import Home from "./Components/Home/Home.jsx"
 
 
 function App() {
@@ -17,8 +18,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Signup />} />
           <Route path="/registrationForm" element={<RegistrationPage />} />
-          <Route path="/home" element={<Sidebar />} />
+          <Route path="/sidebar" element={<Sidebar />} />
           <Route path="/signin" element={<SignIn />} />
+          <Route path="/homet" element={<Home/>} />
         </Routes>
       </Router>
       </Provider>

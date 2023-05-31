@@ -1,25 +1,24 @@
 .topcontent {
   width: 150px;
-  margin-top: -1rem;
+  margin-top: -2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 10px;
+  /* padding-top: 10px; */
 }
 .changeToEmail {
   display: flex;
   justify-content: end;
   color: rgb(0, 128, 255);
   font-size: 1rem;
-  line-height: 2;
+  line-height: 1;
 }
 .textContent {
   line-height: 1;
-  padding-bottom: 15px;
-}
-h4 {
-  line-height: 2;
+  /* padding-bottom: 15px; */
 }
 .headerContent {
-  line-height: 2;
+  line-height: 1;
+  align-items: stretch;
+  font-size: 2rem;
 }
