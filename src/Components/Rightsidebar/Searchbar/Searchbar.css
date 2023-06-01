@@ -2,7 +2,7 @@
     width: 25%;
   }
   .trends__search {
-    position: fixed;
+    /* position: fixed; */
     width: 25%;
     top: 10px;
     right: 0;

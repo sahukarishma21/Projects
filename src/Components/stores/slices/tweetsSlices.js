@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchTweets } from "../fetchTweet/fetchTweets";
+import { fetchTweets, createTweet, fetchMyTweets } from "../fetchTweet/fetchTweets";
 
 const tweetsSlice = createSlice({
   name: "tweets",
@@ -8,7 +8,9 @@ const tweetsSlice = createSlice({
     loading: false,
     error: null,
   },
+
   reducers: {},
+  
   extraReducers: (builder) => {
     builder
       .addCase(fetchTweets.pending, (state) => {

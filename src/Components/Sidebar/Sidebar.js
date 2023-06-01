@@ -16,10 +16,10 @@ import LogOut from "../logout/logout";
 
 function Sidebar() {
   return(
+   
     <div className="sidebar">
-    <LogOut/>
+    {/* <LogOut/> */}
     
-      <TwitterIcon className="sidebar__twitterIcon" />
       <TwitterIcon className="sidebar__twitterIcon" />
 
 <div className="scrollbar">

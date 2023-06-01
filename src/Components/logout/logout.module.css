@@ -1,8 +1,6 @@
 .LogOutSection{
     width: 100%;
-}
-.userProfile{
-    
+    height: 100vh;
 }
 .userImg{
     width: 3rem;
@@ -22,6 +20,10 @@
     background-color: rgb(228, 233, 233);
 }
 .user{
+   
     line-height: 0;
+}
+.dialog{
+    margin: auto;
 }
 
