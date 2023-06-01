@@ -71,6 +71,7 @@ export default function RegistrationPage() {
 
   const handleClose = () => {
     dispatch(setOpen(false));
+    navigate('/DummyhomePage ')
   };
 
   const handleNameChange = (event) => {
@@ -156,7 +157,7 @@ export default function RegistrationPage() {
           }}
         >
           <div className={style.topcontent}>
-           <NavLink to={'/DummyhomePage'}> <CloseIcon onClick={handleClose}></CloseIcon> </NavLink>
+           <CloseIcon onClick={handleClose}></CloseIcon> 
             <h3>Step 1 of 5</h3>
           </div>
           <RegistrationForm onSubmit={handleSubmit}>
