@@ -1,0 +1,80 @@
+.tweet-container {
+  display: flex;
+  align-items: flex-start;
+
+  background-color: white;
+  height: 19vh;
+  width: 41vw;
+  flex-direction: column;
+  padding: 10px;
+  border: 2px solid black;
+}
+
+.twit-content {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  height: 60%;
+}
+.tweet-footer {
+  display: flex;
+  justify-content: space-around;
+  width: 43vw;
+  margin-top: 1.5rem;
+}
+.tweet-footer svg {
+  padding-right: 10px;
+}
+.btn button {
+  border-radius: 3rem;
+}
+
+.input-container input {
+  padding: 8px;
+  font-size: 16px;
+  height: 8vh;
+  width: 30vw;
+}
+.input-container .profilepic svg {
+  font-size: 4rem;
+}
+
+.icon-container {
+  display: flex;
+}
+.icon-container svg {
+  color: #1da1f2;
+}
+
+.btn button {
+  padding: 8px 16px;
+  background-color: #1da1f2;
+  color: white;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  width: 6vw;
+}
+.showtweets {
+  background: white;
+  align-items: center;
+  text-align: center;
+  height: 5vh;
+  align-items: center;
+  border: 2px solid black;
+}
+.new-tweets {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  width: 30vw;
+}
+ul {
+  border: 2px solid black;
+  margin-top: 0px;
+}
+.child {
+  margin: 1rem;
+}

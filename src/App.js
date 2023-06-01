@@ -21,7 +21,7 @@ function App() {
           <Route path="/sidebar" element={<Sidebar />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/homet" element={<Home/>} />
-        </Routes>
+          </Routes>
       </Router>
       </Provider>
     </div>
