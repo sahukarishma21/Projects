@@ -42,7 +42,7 @@ h3 {
   top: 0;
   left: 0;
   flex-basis: 25%;
-  line-height: 2.5rem;
+  line-height: 2rem;
 }
 .rightside {
   display: flex;
