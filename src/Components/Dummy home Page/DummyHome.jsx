@@ -1,5 +1,7 @@
 import style from './DummyHome.module.css'
 
+import LeftSidebar from './LeftSidebar/LeftSidebar';
+
 
 
 export default function DummyHome(){
@@ -11,7 +13,7 @@ export default function DummyHome(){
             <section className={style.dummupage}>
                 <footer>
                         <div>
-
+<LeftSidebar />
                         </div>
                 </footer>
             </section>
