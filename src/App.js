@@ -8,6 +8,7 @@ import { Provider } from "react-redux";
 import store from './Components/stores/index.js';
 import Protected from "./Components/protected/protected.js";
 import Home from "./Components/Home/Home.jsx"
+import DummyHome from "./Components/Dummy home Page/DummyHome.jsx";
 
 
 function App() {
@@ -20,7 +21,10 @@ function App() {
           <Route path="/registrationForm" element={<RegistrationPage />} />
           <Route path="/sidebar" element={<Sidebar />} />
           <Route path="/signin" element={<SignIn />} />
-          <Route path="/homet" element={<Home/>} />
+          <Route path="/home" element={<Home/>} />
+          <Route path="/DummyhomePage" element={<DummyHome/>} />
+          
+
         </Routes>
       </Router>
       </Provider>

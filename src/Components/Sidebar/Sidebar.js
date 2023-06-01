@@ -27,14 +27,14 @@ function Sidebar() {
       <SidebarOption Icon={BookmarkBorderIcon} text= "Bookmarks" />
       <SidebarOption Icon={PermIdentityRoundedIcon} text= "Profile" />
       <SidebarOption Icon={MoreHorizRoundedIcon} text= "More" />
-      </div>
+      
 
       {/* Button -> Tweet */}
       <Button variant="contained" className="sidebar__tweet" fullWidth>
        Tweet
       </Button>
 </div>
-
+</div>
 
   );
 }
