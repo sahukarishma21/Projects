@@ -12,6 +12,7 @@ import MoreHorizRoundedIcon from '@mui/icons-material/MoreHorizRounded';
 import PermIdentityRoundedIcon from '@mui/icons-material/PermIdentityRounded';
 import Button from '@mui/material/Button';
 import Follow from "../follow/follow";
+import LogOut from "../logout/logout";
 
 
 function Sidebar() {
@@ -19,6 +20,7 @@ function Sidebar() {
   return(
     <div className="sidebar">
     <Follow/>
+    <LogOut/>
     
       <TwitterIcon className="sidebar__twitterIcon" />
 
