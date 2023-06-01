@@ -7,7 +7,7 @@ import RegistrationPage from "./Components/SignInForm/registrationForm.js";
 import { Provider } from "react-redux";
 import store from './Components/stores/index.js';
 import Protected from "./Components/protected/protected.js";
-import Home from "./Components/Home/Home.jsx"
+import Home from "./Components/home/Home.js";
 
 
 function App() {
