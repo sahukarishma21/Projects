@@ -1,4 +1,4 @@
-
+import React from "react";
 import "./sidebar.css";
 import TwitterIcon from '@mui/icons-material/Twitter';
 import SidebarOption from "./Sidebaroption";
@@ -14,7 +14,6 @@ import Button from '@mui/material/Button';
 import Follow from "../follow/follow";
 import LogOut from "../logout/logout";
 
-
 function Sidebar() {
   
   return(
@@ -23,7 +22,9 @@ function Sidebar() {
     <LogOut/>
     
       <TwitterIcon className="sidebar__twitterIcon" />
+          <TwitterIcon className="sidebar__twitterIcon" />
 
+<div className="scrollbar">
       <SidebarOption Icon={HomeRoundedIcon} text="Home" />
       <SidebarOption Icon={TagIcon} text= "Explore" />
       <SidebarOption Icon={NotificationsNoneSharpIcon} text= "Notifications" />
@@ -33,11 +34,16 @@ function Sidebar() {
       <SidebarOption Icon={PermIdentityRoundedIcon} text= "Profile" />
       <SidebarOption Icon={MoreHorizRoundedIcon} text= "More" />
       
+
       {/* Button -> Tweet */}
-      <Button varient="contained" className="sidebar__tweet" fullWidth>
+      <Button variant="contained" className="sidebar__tweet" fullWidth>
        Tweet
       </Button>
 </div>
+
+</div>
+=======
+
   );
   
 }
