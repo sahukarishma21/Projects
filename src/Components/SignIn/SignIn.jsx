@@ -39,7 +39,7 @@ const SignIn = () => {
   };
 
   return (
-    <Box>
+    <Box className="signup-hero">
       <Box selected className="signup-container">
         <Box selected className="signup-logo">
           <span className="close-icon">
@@ -92,7 +92,9 @@ const SignIn = () => {
               value={phone}
               onChange={handlePhoneChange}
             />
+            
           </Box>
+
           <Button
             selected
             className="create-btn"
@@ -108,7 +110,7 @@ const SignIn = () => {
         <p onClick={() => navigate("/")}>
           Don't Have an account
           <a className="blue" href="#">
-            <span>SignUp</span>
+            <span> SignUp</span>
           </a>
         </p>
       </Box>

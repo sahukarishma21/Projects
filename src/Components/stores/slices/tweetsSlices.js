@@ -7,9 +7,10 @@ const tweetsSlice = createSlice({
     tweets: [],
     loading: false,
     error: null,
-    
   },
+
   reducers: {},
+  
   extraReducers: (builder) => {
     builder
       .addCase(fetchTweets.pending, (state) => {
@@ -23,31 +24,7 @@ const tweetsSlice = createSlice({
       .addCase(fetchTweets.rejected, (state, action) => {
         state.loading = false;
         state.error = action.error.message;
-      })
-      .addCase(createTweet.pending, (state) => {
-        state.loading = true;
-        state.error = null;
-      })
-      // .addCase(createTweet.fulfilled, (state, action) => {
-      //   state.loading = false;
-      //   state.tweets.push(action.payload);
-      // })
-      // .addCase(createTweet.rejected, (state, action) => {
-      //   state.loading = false;
-      //   state.error = action.error.message;
-      // })
-      // .addCase(fetchMyTweets.pending, (state) => {
-      //   state.loading = true;
-      //   state.error = null;
-      // })
-      // .addCase(fetchMyTweets.fulfilled, (state, action) => {
-      //   state.loading = false;
-      //   state.tweets = action.payload;
-      // })
-      // .addCase(fetchMyTweets.rejected, (state, action) => {
-      //   state.loading = false;
-      //   state.error = action.error.message;
-      // });
+      });
   },
 });
 

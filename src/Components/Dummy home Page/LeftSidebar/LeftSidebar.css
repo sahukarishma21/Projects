@@ -1,0 +1,18 @@
+.leftsidOption {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: -10px;
+    padding: 1px;
+    width: fit-content;
+    font-weight: 600;
+}
+
+
+.leftsidebar__twitterIcon  {
+        color: black;
+        font-size: 30px !important;
+        margin-left: 20px;
+        margin-bottom: 1px;
+        font-size: large;
+      }

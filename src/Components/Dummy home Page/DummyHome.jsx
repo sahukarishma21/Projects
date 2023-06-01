@@ -3,6 +3,11 @@ import styles from './DummyHome.module.css';
 import { NavLink } from 'react-router-dom';
 import Signup from '../Signup/Signup';
 import RightSide from './rightside/RightSide';
+import LeftSidebar from './LeftSidebar/LeftSidebar'
+import { style } from '@mui/system';
+import Createtweet from '../Home/Createtweet';
+import Twitterpost from '../Home/Twitterpost';
+
 
 
 export default function DummyHome() {
@@ -18,17 +23,23 @@ export default function DummyHome() {
           <NavLink to="/signin">
             <button className={styles.btn}>Login</button>
           </NavLink>
-          <NavLink to="/signup">
+          <NavLink to="/">
             <button className={styles.btn1}>Signup</button>
           </NavLink>
         </div>
       </div>
-      <div>
-      <div>
-        <h1>space for tweets</h1>
-      </div>
-      <RightSide/>
+      <div className={styles.pagecontainer}>
+        <div className={styles.leftside}>
+          <LeftSidebar />
+        </div>
         
+        <div className={styles.part}>
+          <Twitterpost />
+        </div>
+        <div className={styles.rightside}>
+          <RightSide />
+        </div>
+
       </div>
     </section>
   );

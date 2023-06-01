@@ -1,124 +1,153 @@
-import React from "react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  createTweet,
-  fetchTweets,
-  fetchMyTweets,
-} from "../stores/fetchTweet/fetchTweets";
-import "./createtweet.css";
-import { Button, Avatar, Box } from "@mui/material";
+import { fetchTweets } from "../stores/fetchTweet/fetchTweets";
+import { Button, Avatar } from "@mui/material";
 import ImageOutlinedIcon from "@mui/icons-material/ImageOutlined";
 import FormatListBulletedOutlinedIcon from "@mui/icons-material/FormatListBulletedOutlined";
 import SentimentSatisfiedOutlinedIcon from "@mui/icons-material/SentimentSatisfiedOutlined";
 import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
 import RoomOutlinedIcon from "@mui/icons-material/RoomOutlined";
 import MarginOutlinedIcon from "@mui/icons-material/MarginOutlined";
-import Input from "@mui/material/Input";
-import InputAdornment from "@mui/material/InputAdornment";
-import AccountCircle from "@mui/icons-material/AccountCircle";
+import "./createtweet.css";
 
 const Createtweet = () => {
   const dispatch = useDispatch();
   const tweets = useSelector((state) => state.tweets.tweets);
   const loading = useSelector((state) => state.tweets.loading);
   const error = useSelector((state) => state.tweets.error);
-  const createdtweet = useSelector((state) => state.tweets.createdTweet) || [];
-  const [tweetContent, setTweetContent] = useState("");
-  const [postImages, setPostImages] = useState("");
 
-  useEffect(() => {
-    dispatch(fetchMyTweets());
-  }, [dispatch]);
+  const [tweetContent, setTweetContent] = useState("");
+  const [tweetImage, setTweetImage] = useState(null);
+
   useEffect(() => {
     dispatch(fetchTweets());
-    
   }, [dispatch]);
 
-  //   const handleSubmitTweet = async () => {
-  //     setTweetContent(tweets)
-  //   };
-
-  const handleSubmitTweet = async () => {
-    // Dispatch the createTweet action with the tweet content as the payload
-    dispatch(createTweet({ content: tweetContent, postimage : postImages }));
-
-    // Clear the tweet content after submission
-    setTweetContent("");
+  const handleImage = (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    setTweetImage(reader.result);
   };
+
+  const handleInput = (event) => {
+    event.preventDefault();
+    const newTweet = {
+      text: tweetContent,
+      image: tweetImage,
+      time: new Date().toLocaleString(),
+    };
+    setTweetContent("");
+    setTweetImage(null);
+    dispatch(event.target.value);
+  };
+
   return (
-    <Box>
-      <Box className="tweet-container">
-        <Box className="twit-content">
-          <Box className="input-container">
-            <Input
+    <section>
+      <div className="tweet-container">
+        <div className="profile">
+          <Avatar
+            alt="Remy Sharp"
+            src="https://tse2.mm.bing.net/th?id=OIP.cphbUmdFsam1huiAHaOnGwHaFB&pid=Api&P=0"
+          />
+          <div className="tweet-write">
+            <input
               type="text"
+              placeholder="What is Happening?"
               value={tweetContent}
               onChange={(e) => setTweetContent(e.target.value)}
-              placeholder="What's happening?"
-              id="input-with-icon-adornment"
-              startAdornment={
-                <InputAdornment className="profilepic" position="start">
-                  <AccountCircle />
-                </InputAdornment>
-              }
             />
-            <Input
-              type="file"
-              value={postImages}
-              onChange={(e) => setPostImages(e.target.value)}
-              placeholder="What's happening?"
-              id="input-with-icon-adornment"
-              startAdornment={
-                <InputAdornment className="profilepic" position="start">
-                  <AccountCircle />
-                </InputAdornment>
-              }
-            />
-          </Box>
-        </Box>
-        <div className="tweet-footer">
-          <div className="icon-container">
-            <ImageOutlinedIcon />
-            <MarginOutlinedIcon />
-            <FormatListBulletedOutlinedIcon />
-            <SentimentSatisfiedOutlinedIcon />
-            <CalendarMonthOutlinedIcon />
-            <RoomOutlinedIcon />
-          </div>
-          <div className="btn">
-            <Button onClick={handleSubmitTweet}>Tweet</Button>
           </div>
         </div>
-      </Box>
-      <div className="showtweets">
-        <span>Show 94 tweets</span>
+        <div className="content">
+          <div className="icon">
+            <ImageOutlinedIcon
+              sx={{
+                height: "20px",
+                width: "20px",
+                color: "#1DA1F2",
+                marginRight: "10px",
+                padding: "5px",
+                borderRadius: "15px",
+                "&:hover": {
+                  backgroundColor: "lightskyblue",
+                },
+              }}
+            />
+            <MarginOutlinedIcon
+              sx={{
+                height: "20px",
+                width: "20px",
+                color: "#1DA1F2",
+                marginRight: "10px",
+                padding: "5px",
+                borderRadius: "15px",
+                "&:hover": {
+                  backgroundColor: "lightskyblue",
+                },
+              }}
+            />
+            <FormatListBulletedOutlinedIcon
+              sx={{
+                height: "20px",
+                width: "20px",
+                color: "#1DA1F2",
+                marginRight: "10px",
+                padding: "5px",
+                borderRadius: "15px",
+                "&:hover": {
+                  backgroundColor: "lightskyblue",
+                },
+              }}
+            />
+            <SentimentSatisfiedOutlinedIcon
+              sx={{
+                height: "20px",
+                width: "20px",
+                color: "#1DA1F2",
+                marginRight: "10px",
+                padding: "5px",
+                borderRadius: "15px",
+                "&:hover": {
+                  backgroundColor: "lightskyblue",
+                },
+              }}
+            />
+            <CalendarMonthOutlinedIcon
+              sx={{
+                height: "20px",
+                width: "20px",
+                color: "#1DA1F2",
+                marginRight: "10px",
+                padding: "5px",
+                borderRadius: "15px",
+                "&:hover": {
+                  backgroundColor: "lightskyblue",
+                },
+              }}
+            />
+            <RoomOutlinedIcon
+              sx={{
+                height: "20px",
+                width: "20px",
+                color: "#1DA1F2",
+                marginRight: "10px",
+                padding: "5px",
+                borderRadius: "15px",
+                "&:hover": {
+                  backgroundColor: "lightskyblue",
+                },
+              }}
+            />
+          </div>
+          <div className="btn">
+            <Button onClick={handleInput}>Tweet</Button>
+          </div>
+        </div>
+        <div className="show">
+          <span>Show 94 tweets</span>
+        </div>
       </div>
-
-      {loading ? (
-        <h5>Loading...</h5>
-      ) : error ? (
-        <h5>Error: {error}</h5>
-      ) : (
-        <ul>
-          {createdtweet.map((tweet) => (
-            <Box key={tweet.id}>
-              <Box className="new-tweets">
-                <Box className="child">
-                  <Avatar
-                    alt="http://dummyimage.com/50x50.png/5fa2dd/ffffff"
-                    src="/static/images/avatar/1.jpg"
-                  />
-                </Box>
-                <Box className="child">
-                  <span>{tweet.content}</span>
-                </Box>
-              </Box>
-            </Box>
-          ))}
-        </ul>
-      )}
-    </Box>
+    </section>
   );
 };
 

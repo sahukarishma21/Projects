@@ -7,7 +7,7 @@ const registrationFormSlice = createSlice({
     phone: '',
     day: '',
     month: '',
-    year: '',
+    year: '', 
     password:'',
   },
   reducers: {
