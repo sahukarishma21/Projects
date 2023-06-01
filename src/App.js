@@ -10,6 +10,8 @@ import Protected from "./Components/protected/protected.js";
 import Home from "./Components/Home/Home.jsx"
 import SearchBar from "./Components/Rightsidebar/Searchbar/Searchbar.js";
 import Twitterdata from './Components/Rightsidebar/data/User.json';
+import Topics from './TrendsKeyword/TrendsKeyword';
+import TopicItem from './TopicItem/TopicItem';
 
 function App() {
   return (
@@ -26,6 +28,9 @@ function App() {
       </Router>
       </Provider>
       <SearchBar placeholder="search twitter" data={Twitterdata}/>
+      <Topics/>
+     <TopicItem/>
+      
     </div>
   );
 }
