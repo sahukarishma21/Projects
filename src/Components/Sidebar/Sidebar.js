@@ -12,12 +12,16 @@ import MoreHorizRoundedIcon from '@mui/icons-material/MoreHorizRounded';
 import PermIdentityRoundedIcon from '@mui/icons-material/PermIdentityRounded';
 import Button from '@mui/material/Button';
 import Follow from "../follow/follow";
+import LogOut from "../logout/logout";
 
 function Sidebar() {
   
   return(
     <div className="sidebar">
     <Follow/>
+    <LogOut/>
+    
+      <TwitterIcon className="sidebar__twitterIcon" />
           <TwitterIcon className="sidebar__twitterIcon" />
 
 <div className="scrollbar">
@@ -36,11 +40,10 @@ function Sidebar() {
        Tweet
       </Button>
 </div>
-<<<<<<< HEAD
+
 </div>
 =======
 
->>>>>>> 290a0283e24bcd15be101a7c8daa3d50e40f76b6
   );
   
 }

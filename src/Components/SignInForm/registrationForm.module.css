@@ -22,3 +22,8 @@
   align-items: stretch;
   font-size: 2rem;
 }
+.infotext{
+  line-height: 0;
+}
+
+

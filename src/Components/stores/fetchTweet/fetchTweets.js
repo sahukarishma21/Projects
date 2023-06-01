@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
 
-export const fetchTweets = createAsyncThunk('tweet/fetchTweets',async()=>{
+export const fetchTweets = createAsyncThunk('tweets/fetchTweets',async()=>{
     try{
         const response = await fetch("../db.json");
         if(!response.ok){
