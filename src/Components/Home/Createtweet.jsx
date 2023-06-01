@@ -23,14 +23,16 @@ const Createtweet = () => {
   const tweets = useSelector((state) => state.tweets.tweets);
   const loading = useSelector((state) => state.tweets.loading);
   const error = useSelector((state) => state.tweets.error);
+  const createdtweet = useSelector((state) => state.tweets.createdTweet) || [];
   const [tweetContent, setTweetContent] = useState("");
-
-  useEffect(() => {
-    dispatch(fetchTweets());
-  }, [dispatch]);
+  const [postImages, setPostImages] = useState("");
 
   useEffect(() => {
     dispatch(fetchMyTweets());
+  }, [dispatch]);
+  useEffect(() => {
+    dispatch(fetchTweets());
+    
   }, [dispatch]);
 
   //   const handleSubmitTweet = async () => {
@@ -39,7 +41,7 @@ const Createtweet = () => {
 
   const handleSubmitTweet = async () => {
     // Dispatch the createTweet action with the tweet content as the payload
-    dispatch(createTweet({ content: tweetContent }));
+    dispatch(createTweet({ content: tweetContent, postimage : postImages }));
 
     // Clear the tweet content after submission
     setTweetContent("");
@@ -53,6 +55,18 @@ const Createtweet = () => {
               type="text"
               value={tweetContent}
               onChange={(e) => setTweetContent(e.target.value)}
+              placeholder="What's happening?"
+              id="input-with-icon-adornment"
+              startAdornment={
+                <InputAdornment className="profilepic" position="start">
+                  <AccountCircle />
+                </InputAdornment>
+              }
+            />
+            <Input
+              type="file"
+              value={postImages}
+              onChange={(e) => setPostImages(e.target.value)}
               placeholder="What's happening?"
               id="input-with-icon-adornment"
               startAdornment={
@@ -87,7 +101,7 @@ const Createtweet = () => {
         <h5>Error: {error}</h5>
       ) : (
         <ul>
-          {tweets.map((tweet) => (
+          {createdtweet.map((tweet) => (
             <Box key={tweet.id}>
               <Box className="new-tweets">
                 <Box className="child">

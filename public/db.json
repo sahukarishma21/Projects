@@ -1,5 +1,4 @@
-{
-  "datas": [
+ [
     {
       "id": 1,
       "first_name": "Phil",
@@ -60,15 +59,5 @@
       "images": "http://dummyimage.com/105x100.png/ff4444/ffffff",
       "profilImages": "http://dummyimage.com/167x100.png/5fa2dd/ffffff"
     }
-  ],
-  "akData": [
-    {
-      "content": "hello new tweet",
-      "id": 18
-    },
-    {
-      "content": "he",
-      "id": 19
-    }
   ]
-}
+  
