@@ -1,3 +1,8 @@
+.main-signup {
+  display: flex;
+  /* background-color: #3a3b3c; */
+  margin: auto;
+}
 .signup-container {
   width: 36vw;
   height: 88vh;
@@ -146,8 +151,6 @@ h1 {
 p a {
   text-decoration: none;
 }
-
-
 
 @media only screen and (max-width: 768px) {
   .signup-container {

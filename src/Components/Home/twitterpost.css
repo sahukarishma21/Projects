@@ -2,10 +2,13 @@
   background-color: white;
 
   overflow: auto;
-  max-height: 400px; /* Set a maximum height to limit the size of the container */
 }
 .post-container::-webkit-scrollbar {
   display: none;
+}
+.post-card {
+  border: 1px solid black;
+  border-radius: 10px;
 }
 
 .post-header {
@@ -21,6 +24,8 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  justify-content: space-evenly;
 }
 
 .post-contents {
@@ -30,6 +35,11 @@
 }
 .chartbox {
   display: flex;
+  padding-left: 10px;
+}
+.comment-tweet {
+  margin-top: 0px;
+  padding-left: 10px;
 }
 .forword-icon {
   flex-direction: row;
@@ -59,10 +69,19 @@
 .post-card .postcard-img {
   width: 100%;
   object-fit: cover;
+  border-radius: 10px 10px 0px 0px !important;
 }
 ul {
   padding: 10px;
 }
-.post-card {
-  border: 1px solid black;
+
+.footer-card-content {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 17px 0;
+}
+
+.hero-card {
+  margin-bottom: 40px;
 }
