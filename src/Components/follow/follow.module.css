@@ -2,13 +2,12 @@
     width: 100%;
   }
   
-  /* .wrapper {
-    height: 48vh;
-    overflow: scroll;
-    overflow: hidden;
-    background-color: #eee;
+  .wrapper {
+   
+    padding: 1rem;
+    background-color: #fcfbfb;
     border-radius: 1rem;
-  } */
+  }
   
   .userList {
     list-style: none;
@@ -19,6 +18,11 @@
     max-width: 100%;
     justify-content: space-between;
     padding: 1rem;
+    background-color: rgb(255, 255, 255);
+    border-radius: 0.3rem;
+  }
+  .userList:hover{
+    background-color: rgb(248, 245, 245);
   }
   
   .img {
@@ -33,6 +37,7 @@
     font-size: 1rem;
     background-color: black;
     border-radius: 1rem;
+    border: none;
   }
   .btn:hover{
     background-color: rgb(36, 35, 35);
@@ -43,8 +48,27 @@
   }
   .seeMoreButton{
     color: rgb(0, 166, 255);
-    background-color: aliceblue;
+    background-color: rgb(247, 250, 252);
     border: none;
     font-size: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    padding: 1rem;
+  }
+  .btn1{
+    padding: 0.5rem 1.5rem;
+    content: "Following";
+    color: rgb(0, 6, 10);
+    font-size: 1rem;
+    background-color: rgb(255, 252, 252);
+    border-radius: 1rem;
+    border: 1px solid rgb(171, 164, 164);
+  }
+  .btn1:hover{
+    background-color: rgb(248, 192, 192);
+    
+    color: red;
   }
   
+ 

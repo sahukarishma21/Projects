@@ -12,7 +12,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import style from "./registrationForm.module.css";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { setName, setPhone, setDay, setMonth, setYear,setpassword } from "../stores/slices/registrationFormSlice";
+import { setName, setPhone, setDay, setMonth, setYear } from "../stores/slices/registrationFormSlice";
 
 
 
@@ -45,12 +45,9 @@ export default function RegistrationPage() {
 
 
 
-  const { name, phone, day, month, year,password } = useSelector((state) => state.registration);
+  const { name, phone, day, month, year } = useSelector((state) => state.registration);
 
-  const nameRegex = /^[A-Za-z\s]+$/;
-  const phoneRegex = /^[6-9]\d{9}$/;
 
-  const passwordRegex = /^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
 
   const handleDayChange = (event) => {
     dispatch(setDay(event.target.value));
@@ -83,9 +80,7 @@ export default function RegistrationPage() {
   const handlePhoneChange = (event) => {
     dispatch(setPhone(event.target.value));
   };
-  const handlePasswordChange = (event) => {
-    dispatch(setpassword(event.target.value));
-  };
+ 
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -99,10 +94,7 @@ export default function RegistrationPage() {
     } else if (!phoneRegex.test(phone)) {
       alert("Enter a valid Phone Number");
 
-    } else if (!passwordRegex.test(password)) {
-
-      alert("Enter a valid Password");
-    } else if (!day && !month && !year === "") {
+    }  else if (!day && !month && !year === "") {
       alert("Enter a valid Date");
     } else {
       const userRegistrationData = {
@@ -111,7 +103,6 @@ export default function RegistrationPage() {
         day,
         month,
         year,
-        password,
       };
       const storedData = localStorage.getItem("userRegistrationData");
       let newData = [];
@@ -152,6 +143,14 @@ export default function RegistrationPage() {
             outline: "none",
             boxSizing:'border-box',
 
+            "@media (max-width: 768px)": {
+              minWidth: "80%",
+              maxWidth: "80%",
+              height: "auto",
+              maxHeight: "90%",
+              overflowY: "auto",
+            },
+
             
           }}
         >
@@ -160,7 +159,7 @@ export default function RegistrationPage() {
             <h3>Step 1 of 5</h3>
           </div>
           <RegistrationForm onSubmit={handleSubmit}>
-            <h2 className={style.headerContent}>Create your account</h2>
+            <h2 className={style.C}>Create your account</h2>
             <TextField
               placeholder="Name"
               name="name"
@@ -194,11 +193,13 @@ export default function RegistrationPage() {
               }}
             /> */}
             <p className={style.changeToEmail}>Use email instead</p>
+            <div className={style.infotext}>
             <h4>Date of birth</h4>
             <p className={style.textContent}>
               This will not be shown publicly. Confirm your own age, even if
               this account is for a business, a pet, or something else.
             </p>
+            </div>
             <div
               style={{
                 display: "flex",
@@ -261,7 +262,11 @@ export default function RegistrationPage() {
                 fontSize: "1rem",
                 fontWeight: "700",
                 backgroundColor: "#33302f",
-                marginTop: "1rem",
+                marginTop: "5rem",
+
+                '@media (max-width:768px)':{
+                  marginTop:'1rem'
+                }
               }}
             >
               Next

@@ -44,7 +44,7 @@ const SignIn = () => {
   };
 
   return (
-    <Box>
+    <Box className="signup-hero">
       <Box selected className="signup-container">
         <Box selected className="signup-logo">
           <span className="close-icon">
@@ -85,30 +85,30 @@ const SignIn = () => {
               Or
             </span>
           </Box>
-        <Box className="Signininput">
-        <TextField
-            selected
-            className="Signin-input"
-            id="outlined-basic"
-            label="Phone email or username"
-            variant="outlined"
-            type="text"
-            name="phone"
-            value={phone}
-            onChange={handlePhoneChange}
-          />
-          <TextField
-            selected
-            className="Signin-input"
-            id="outlined-basic"
-            label="Enter your password"
-            variant="outlined"
-            type="password"
-            name="password"
-            value={password}
-            onChange={handlePasswordChange}
-          />
-        </Box>
+          <Box className="Signininput">
+            <TextField
+              selected
+              className="Signin-input"
+              id="outlined-basic"
+              label="Phone email or username"
+              variant="outlined"
+              type="text"
+              name="phone"
+              value={phone}
+              onChange={handlePhoneChange}
+            />
+            <TextField
+              selected
+              className="Signin-input"
+              id="outlined-basic"
+              label="Enter your password"
+              variant="outlined"
+              type="password"
+              name="password"
+              value={password}
+              onChange={handlePasswordChange}
+            />
+          </Box>
 
           <Button
             selected
@@ -118,21 +118,15 @@ const SignIn = () => {
           >
             Next
           </Button>
-          <Button
-            selected
-            className="Google-btn"
-            variant="outline"
-            
-          >
-          
+          <Button selected className="Google-btn" variant="outline">
             Forget Password
           </Button>
         </Box>
 
         <p onClick={() => navigate("/")}>
-          Don't Have an account 
+          Don't Have an account
           <a className="blue" href="#">
-            <span>  SignUp</span>
+            <span> SignUp</span>
           </a>
         </p>
       </Box>

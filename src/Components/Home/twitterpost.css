@@ -1,0 +1,87 @@
+.post-container {
+  background-color: white;
+
+  overflow: auto;
+}
+.post-container::-webkit-scrollbar {
+  display: none;
+}
+.post-card {
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.post-header {
+  /* display: flex;
+  flex-direction: column; */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 1rem 0;
+}
+.post-contain {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.post-contents {
+  display: flex;
+  justify-content: space-between;
+  gap: 7rem;
+}
+.chartbox {
+  display: flex;
+  padding-left: 10px;
+}
+.comment-tweet {
+  margin-top: 0px;
+  padding-left: 10px;
+}
+.forword-icon {
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+}
+.comment-icon {
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+}
+.share-icon {
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+}
+
+.post-footer {
+  display: flex;
+  gap: 1.8rem;
+}
+.chartbox {
+  display: flex;
+  align-items: center;
+}
+
+.post-card .postcard-img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px 10px 0px 0px !important;
+}
+ul {
+  padding: 10px;
+}
+
+.footer-card-content {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 17px 0;
+}
+
+.hero-card {
+  margin-bottom: 40px;
+}

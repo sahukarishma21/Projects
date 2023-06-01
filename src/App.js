@@ -9,7 +9,8 @@ import store from './Components/stores/index.js';
 import Protected from "./Components/protected/protected.js";
 import Home from "./Components/Home/Home.jsx"
 import DummyHome from "./Components/Dummy home Page/DummyHome.jsx";
-
+import SearchBar from "./Components/Rightsidebar/Searchbar/Searchbar.js";
+import Twitterdata from './Components/Rightsidebar/data/User.json';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         </Routes>
       </Router>
       </Provider>
+      <SearchBar placeholder="search twitter" data={Twitterdata}/>
     </div>
   );
 }
