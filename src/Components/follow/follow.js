@@ -8,7 +8,7 @@ export default function Follow() {
     const tweets = useSelector((state) => state.tweets.tweets);
     const loading = useSelector((state) => state.tweets.loading);
     const error = useSelector((state) => state.tweets.error);
-    const [visibleCards, setVisibleCards] = useState(4);
+    const [visibleCards, setVisibleCards] = useState(3);
     const [followedUsers, setFollowedUsers] = useState([]);
 
     useEffect(() => {
