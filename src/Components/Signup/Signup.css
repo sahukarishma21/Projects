@@ -1,7 +1,12 @@
 .main-signup {
   display: flex;
   /* background-color: #3a3b3c; */
-  margin: auto;
+  /* margin: auto; */
+
+  justify-content: center;
+  background-color: darkgray;
+  height: 100vh;
+  align-items: center;
 }
 .signup-container {
   width: 36vw;
@@ -130,7 +135,7 @@ h1 {
 
 .Or span {
   display: block;
-  width: 40px;
+  width: 17px;
   margin: auto;
   background-color: #fff;
   font-size: 14px;
