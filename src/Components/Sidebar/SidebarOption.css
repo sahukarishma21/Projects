@@ -30,3 +30,6 @@
 .sidebarOption--active {
     color: var(--twitter-color);
 }
+.logout{
+    margin-top: 2rem;
+}

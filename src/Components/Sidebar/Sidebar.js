@@ -17,11 +17,12 @@ import LogOut from "../logout/logout";
 function Sidebar() {
   
   return(
+   
     <div className="sidebar">
-    <Follow/>
-    <LogOut/>
     
-      <TwitterIcon className="sidebar__twitterIcon" />
+    {/* <LogOut/> */}
+    
+      {/* <TwitterIcon className="sidebar__twitterIcon" /> */}
           <TwitterIcon className="sidebar__twitterIcon" />
 
 <div className="scrollbar">
@@ -40,8 +41,14 @@ function Sidebar() {
        Tweet
       </Button>
 </div>
+<div className='logout'>
+<LogOut/>
+</div>
+
 
 </div>
+
+
 
   );
   

@@ -10,7 +10,7 @@ import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 import CloseIcon from "@mui/icons-material/Close";
 import style from "./registrationForm.module.css";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setName, setPhone, setDay, setMonth, setYear } from "../stores/slices/registrationFormSlice";
 
@@ -103,6 +103,7 @@ export default function RegistrationPage() {
         day,
         month,
         year,
+        username: name,
       };
       const storedData = localStorage.getItem("userRegistrationData");
       let newData = [];
@@ -155,7 +156,7 @@ export default function RegistrationPage() {
           }}
         >
           <div className={style.topcontent}>
-            <CloseIcon onClick={handleClose}></CloseIcon>
+           <NavLink to={'/DummyhomePage'}> <CloseIcon onClick={handleClose}></CloseIcon> </NavLink>
             <h3>Step 1 of 5</h3>
           </div>
           <RegistrationForm onSubmit={handleSubmit}>

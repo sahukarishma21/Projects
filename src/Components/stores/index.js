@@ -1,14 +1,17 @@
 import { configureStore } from "@reduxjs/toolkit";
 import registrationFormSlicereducer from './slices/registrationFormSlice'
-import tweetsSlicesreducer from "./slices/tweetsSlices";
+
+import tweetReducer from '../stores/slices/postTweetSlice'
 
 const store = configureStore({
-    reducer: {
-      registration: registrationFormSlicereducer,
-      tweets : tweetsSlicesreducer
-    },
-  });
+  reducer: {
+    tweets: tweetReducer,
+    registration: registrationFormSlicereducer,
+  },
+});
 
-  export default store;
+export default store;
+
   
-
+  
+  
