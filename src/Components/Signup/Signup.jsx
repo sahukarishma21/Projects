@@ -82,7 +82,7 @@ const Signup = () => {
 
         <Box selected className="term-text">
           <p>
-            By signing up, you agree to the 
+            By signing up, you agree to the  
             <span selected className="blue">
               Terms of Service
             </span>
