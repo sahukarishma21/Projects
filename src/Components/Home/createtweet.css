@@ -1,13 +1,24 @@
 .tweet-container {
   display: flex;
   align-items: flex-start;
-
   background-color: white;
   height: 19vh;
   width: 41vw;
   flex-direction: column;
   padding: 10px;
-  border: 2px solid black;
+  border: 2px solid lightgray;
+}
+.profile {
+  width: 100%;
+  display: flex !important;
+  justify-content: center;
+  flex-wrap: nowrap;
+  margin: 10px 0;
+}
+.content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .twit-content {
@@ -28,12 +39,25 @@
 .btn button {
   border-radius: 3rem;
 }
-
-.input-container input {
+.tweet-write{
+  padding: 5px 35px;
+  width: 100%;
+}
+.tweet-write input {
+  border: none;
   padding: 8px;
   font-size: 16px;
-  height: 8vh;
-  width: 30vw;
+  width: 100%;
+}
+.show{
+  width: 100%;
+  border: 1px solid lightgray;
+  padding: 10px 0px;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  color: #50b7f5;
+  font-weight: 500;
 }
 .input-container .profilepic svg {
   font-size: 4rem;
@@ -55,14 +79,14 @@
   cursor: pointer;
   width: 6vw;
 }
-.showtweets {
+/* .showtweets {
   background: white;
   align-items: center;
   text-align: center;
   height: 5vh;
   align-items: center;
   border: 2px solid black;
-}
+} */
 .new-tweets {
   display: flex;
   justify-content: start;
@@ -72,9 +96,11 @@
   width: 30vw;
 }
 ul {
-  border: 2px solid black;
+  border: 2px solid lightgray;
   margin-top: 0px;
 }
 .child {
   margin: 1rem;
 }
+
+

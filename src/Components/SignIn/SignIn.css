@@ -91,6 +91,9 @@ body{
   flex-direction: column;
   align-items: center;
 } */
+.signup-hero {
+  margin: auto;
+}
 
 .signup-container {
   width: 36vw;
