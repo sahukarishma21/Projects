@@ -7,6 +7,11 @@ import Sidebar from "../Sidebar/Sidebar";
 import style from "./home.module.css";
 import LogOut from "../logout/logout";
 import SearchBar from "../Rightsidebar/Searchbar/Searchbar";
+import TopicItem from "../TopicItem/TopicItem";
+import Topics from '../TrendKeyword/TrendKeyword'
+import Trending from "../trends/trends";
+import Twitterdata from '../Rightsidebar/data/User.json';
+import data from '../Rightsidebar/data/trending.json'
 
 const Home = () => {
   return (
@@ -15,7 +20,9 @@ const Home = () => {
       <div className={style.container}>
         <div className={style.leftside}>
           <Sidebar />
+          <div className={style.logout}>
           <LogOut />
+          </div>
         </div>
         <div className={style.midpart}>
           <h3>Home</h3>
@@ -27,8 +34,18 @@ const Home = () => {
           <Twitterpost />
         </div>
         <div className={style.rightside}>
-          <SearchBar />
+          <SearchBar  data={Twitterdata}/>
+          <Trending/>
           <Follow />
+          <div>
+            <p>Terms of Service
+              Privacy Policy
+              Cookie Policy
+              Accessibility
+              Ads info
+              More
+              © 2023 X Corp.</p>
+          </div>
         </div>
       </div>
     </Box>

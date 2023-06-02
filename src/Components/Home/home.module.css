@@ -1,21 +1,48 @@
-.main-home {
-  border: 1px solid gray;
-}
-h3 {
-  font-size: 1.5rem;
-  margin-left: 10px;
-}
-.home-content {
+
+.container {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: row;
-  margin-bottom: 1rem;
-  font-size: 1rem;
+  justify-content: space-between;
+  margin-top: 0;
 }
+
+.leftside {
+  flex: 0.2; 
+  margin-right: 20px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: hidden; 
+}
+
+.midpart {
+  flex: 0.5;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.rightside {
+  flex: 0.25; 
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: scroll;
+  /* overflow-y: hidden;  */
+}
+.rightside::-webkit-scrollbar{
+  display: none;
+}
+
+.content {
+  background-color: #f5f8fa;
+  height: 50px;
+  margin-bottom: 20px;
+}
+
+
+
 .hometext {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-content: center;
   font-size: 1.2rem;
 }
@@ -24,36 +51,46 @@ h3 {
   border-style: none none solid none;
 }
 
-.container {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  /* align-items: center; */
+
+.leftside > * {
+  flex-shrink: 0;
 }
-.leftside {
-  height: 100vh;
+
+.leftside > .MuiBox-root {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
-  gap: 6rem;
-  padding: 1rem;
-  position: fixed;
-  top: 0;
-  left: 0;
-  flex-basis: 25%;
-  line-height: 2rem;
+  height: 100%;
 }
-.rightside {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  right: 0;
-  flex-basis: 25%;
+
+.leftside > .MuiBox-root > :not(:last-child) {
+  margin-bottom: 10px;
 }
-.midpart {
-  margin: auto;
-  flex-basis: 50%;
+
+.sidebar {
+  margin-bottom: 10px;
+}
+
+.logout {
+  margin-top: auto;
+}
+
+.midpart::-webkit-scrollbar {
+  width: 6px;
+}
+
+.midpart::-webkit-scrollbar-track {
+  background: #f5f8fa;
+}
+
+.midpart::-webkit-scrollbar-thumb {
+  background: #aab8c2;
+  border-radius: 3px;
+}
+
+.midpart::-webkit-scrollbar-thumb:hover {
+  background: #8899a6;
+}
+.logout{
+  margin-top: 6rem;
 }
