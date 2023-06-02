@@ -57,7 +57,7 @@ export default function Follow() {
                                 </button>
                             ) : (
                                 <button className={style.btn1} onClick={() => handleFollow(tweet.id)}>
-                                Following
+                                    Following
                                 </button>
                             )}
                         </li>

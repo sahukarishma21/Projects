@@ -2,6 +2,7 @@
   background-color: white;
 
   overflow: auto;
+  width: 42.5vw;
 }
 .post-container::-webkit-scrollbar {
   display: none;

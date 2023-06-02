@@ -6,11 +6,11 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import CloseIcon from "@mui/icons-material/Close";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { setPhone } from "../stores/slices/registrationFormSlice";
-import "./Signup.css";
+import { setPhone } from '../../stores/slices/registrationFormSlice';
+import style from './RightSide.module.css'
 // import { styled } from "@mui/material/styles";
 
-const Signup = () => {
+const RightSide = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { phone } = useSelector((state) => state.registration);
@@ -29,20 +29,17 @@ const Signup = () => {
   };
 
   return (
-    <Box selected className="main-signup">
-      <Box selected className="signup-container">
-        <Box selected className="signup-logo">
-          <span className="close-icon">
-            <CloseIcon />
-          </span>
-          <span className="twitter-icon">
-            <TwitterIcon />
-          </span>
-          <span className="empty-icon">
-            <TwitterIcon />
-          </span>
-        </Box>
-        <h1>Join Twitter today</h1>
+    
+    <Box sx={{
+        width:'100%',
+        display:'flex',
+        justifyContent:'center',
+
+    }}>
+      <Box selected className={style.container}>
+          <h3>
+New to Twitter?</h3>
+<p>Sign up now to get your own personalized timeline!</p>
         <Box selected className="signup-btn">
           <Button
             selected
@@ -64,13 +61,9 @@ const Signup = () => {
           >
             Signup with Apple
           </Button>
-          <Box selected className="Or">
-            <Divider />
-            <span variant="body1" selected className="Orspan">
-              Or
-            </span>
-          </Box>
+         
           <Button
+          sx={{backgroundColor:'white'}}
             selected
             className="create-btn"
             variant="outline"
@@ -82,7 +75,7 @@ const Signup = () => {
 
         <Box selected className="term-text">
           <p>
-            By signing up, you agree to the  
+            By signing up, you agree to the
             <span selected className="blue">
               Terms of Service
             </span>
@@ -96,15 +89,13 @@ const Signup = () => {
             <span className="blue">Cookie Use.</span>
           </p>
         </Box>
-        <p onClick={() => navigate("/signin")}>
-          Have an account already?{" "}
-          <a className="blue" href="#">
-            Log In
-          </a>
-        </p>
       </Box>
     </Box>
   );
 };
 
-export default Signup;
+export default RightSide;
+
+
+
+

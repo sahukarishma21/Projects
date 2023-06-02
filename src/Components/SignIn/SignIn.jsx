@@ -6,34 +6,29 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import CloseIcon from "@mui/icons-material/Close";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { setPhone, setpassword } from "../stores/slices/registrationFormSlice";
+import { setPhone } from "../stores/slices/registrationFormSlice";
 import "./SignIn.css";
 
 const SignIn = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { phone, password } = useSelector((state) => state.registration);
+  const { phone } = useSelector((state) => state.registration);
   const phoneRegex = /^[7-9]\d{9}$/;
-
-  const passwordRegex = /^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
 
   const handlePhoneChange = (event) => {
     dispatch(setPhone(event.target.value));
   };
-  const handlePasswordChange = (event) => {
-    dispatch(setpassword(event.target.value));
-  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
     if (!phoneRegex.test(phone)) {
       alert("Enter a valid Phone Number");
-    } else if (!passwordRegex.test(password)) {
-      alert("Enter a valid password");
     } else {
-      const userRegistrationData = JSON.parse(
-        localStorage.getItem("userRegistrationData")
-      );
+      // Sample userRegistrationData for testing
+      const userRegistrationData = {
+        phone: phone, // Replace with the correct phone number
+      };
 
       if (userRegistrationData && userRegistrationData.phone === phone) {
         navigate("/home");
@@ -97,17 +92,7 @@ const SignIn = () => {
               value={phone}
               onChange={handlePhoneChange}
             />
-            <TextField
-              selected
-              className="Signin-input"
-              id="outlined-basic"
-              label="Enter your password"
-              variant="outlined"
-              type="password"
-              name="password"
-              value={password}
-              onChange={handlePasswordChange}
-            />
+            
           </Box>
 
           <Button
@@ -122,7 +107,6 @@ const SignIn = () => {
             Forget Password
           </Button>
         </Box>
-
         <p onClick={() => navigate("/")}>
           Don't Have an account
           <a className="blue" href="#">
