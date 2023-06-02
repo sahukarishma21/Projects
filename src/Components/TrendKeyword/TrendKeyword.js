@@ -1,5 +1,5 @@
 import React from "react";
-import "./TrendsKeyword.css";
+import '../TrendKeyword/TrendKeyword.css'
 
 
 

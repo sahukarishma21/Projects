@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./Components/stores/index.js";
-import Protected from './Components/protected/protected.js';
 import Home from './Components/Home/home.js';
 import DummyHome from "./Components/Dummy home Page/DummyHome";
 import Signup from "./Components/Signup/Signup";
@@ -10,12 +9,10 @@ import SignIn from "./Components/SignIn/SignIn";
 import RegistrationPage from "./Components/SignInForm/registrationForm";
 import SearchBar from "./Components/Rightsidebar/Searchbar/Searchbar";
 import Protected from "./Components/protected/protected.js";
-import Home from "./Components/Home/home.js";
-import DummyHome from "./Components/Dummy home Page/DummyHome.jsx";
-import SearchBar from "./Components/Rightsidebar/Searchbar/Searchbar.js";
-import Topics from './TrendsKeyword/TrendsKeyword';
-import TopicItem from './TopicItem/TopicItem';
+import Topics from './Components/TrendKeyword/TrendKeyword.js';
+import TopicItem from './Components/TopicItem/TopicItem.js';
 import Twitterdata from "./Components/Rightsidebar/data/User.json";
+import './App.css'
 
 
 function App() {
@@ -38,10 +35,6 @@ function App() {
           </Routes>
         </Router>
       </Provider>
-
-      <SearchBar placeholder="search twitter" data={Twitterdata}/>
-      <Topics/>
-     <TopicItem/>
       
 
     </div>
