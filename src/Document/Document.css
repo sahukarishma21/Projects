@@ -18,14 +18,7 @@
     align-items: center;
     justify-content: center;
 }
-.preview{
-    position: relative;
-    height: 100%;
-    width: 50%;
-    padding: 10px;
-    overflow-y: scroll;
-    border-left: 1px solid black;
-}
+
 .editor-input{
     height: 100%;
     width: 100%;

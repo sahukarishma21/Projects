@@ -20,13 +20,9 @@ const modules={
 };
 const Document =() => {
     const[value,setValue]=useState("");
-    function handleclick(event){
-        setValue(event.target.value)      
-    }
+    
 
-const zoomhandle=()=>{
-    const percentage=150;
-}
+
     return (
         <div className="container">
             <div className="row">
@@ -37,10 +33,7 @@ const zoomhandle=()=>{
                 modules={modules}
                 />
                     </div>
-                    <div className="preview"
-                    dangerouslySetInnerHTML={{__html: value }}
-                    />
-                    <div style={{ zoom: `${zoomhandle}%` }}></div>
+                   
                     </div>
                 </div>
           
