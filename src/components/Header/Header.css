@@ -1,0 +1,70 @@
+header {
+    height: 100vh;
+    padding-top: 5rem;
+    overflow: hidden;
+  }
+  
+  .header__container {
+    text-align: center;
+    height: 100%;
+    position: relative;
+    color:rgb(28, 63, 82);
+    
+  }
+.header__container h5{
+    font-size: larger;
+}
+.text-light{
+    color: rgb(28, 63, 82);
+    font-size: large;
+}
+  
+  .cta{
+      margin-top: 2.5rem;
+      display: flex;
+      gap:1.2rem;
+      justify-content: center;
+  
+  }
+  
+  .header__soial{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.8rem;
+      position: absolute;
+      left: 0;
+      bottom: 3rem;
+      font-size: 1.5rem;
+  }
+  .header__soial::after{
+  content: "";
+  width: 1px;
+  height: 2rem;
+  background-color: var(--color-primary);
+  }
+  
+ 
+ 
+  /* medium device TABLATE */
+  @media screen and (max-width:1024px) {
+  
+  header{
+    height: 68vh;
+  }
+  
+  }
+  
+  /* small device MOBILE */
+  
+  @media screen and (max-width:600px) {
+  
+    header{
+      height: 90vh;
+    }
+    .me{
+      
+      height: 20rem;
+    }
+  
+  }

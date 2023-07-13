@@ -1,0 +1,49 @@
+.skill__frontend button{
+    width: 10rem;
+    height: 12rem;
+    margin: 1rem;
+    border-radius: 8px;
+    background-color: #fff;
+    }
+    
+    .skill__frontend h2{
+        color: #fff;
+        font-weight: bolder;
+        text-shadow: black .5px .5px .5px, blue 0px 0px 25px, darkblue 0px 0px 5px;
+    }
+    
+    .buttons__img{
+        border-radius: 20px;
+        width: 90px;
+        height: 100px;
+        margin: 2rem;
+       
+    }
+    .skill__container{
+       box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px, rgb(31, 193, 27) 0px 0px 0px 6px;
+       border-radius: 5px;
+    }
+    
+    @media screen and (max-width:675px) {
+        .skill__container{
+            box-shadow:none;
+            margin-left: 3rem;
+        }
+        .skill__frontend button{
+            /* border: 1px solid rgb(189, 100, 100); */
+            width: 20%;
+            height: 5%;
+            /* margin: .5rem; */
+            border-radius: 4px;
+           background-color: transparent;
+            }
+    
+            .buttons__img{
+                border-radius: 20px;
+                width: 35px;
+                height: 60px;
+                display: flex;
+                align-items: center;
+                margin-left: .5rem;
+            }
+    }
