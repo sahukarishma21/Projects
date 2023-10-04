@@ -1,0 +1,58 @@
+/* WarehouseDetailsPage.css */
+.warehouse-details-container {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid hwb(222 9% 31%);
+    background-color: lightgrey;
+  }
+  
+  .warehouse-details-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .warehouse-name {
+    font-weight: bold;
+  }
+  
+  .edit-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .name-input {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #5c1d1d;
+    border-radius: 4px;
+  }
+  
+  .save-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #28a745; /* Green color for save button */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .close-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #dc3545; /* Red color for close button */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
