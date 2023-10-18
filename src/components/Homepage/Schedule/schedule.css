@@ -1,0 +1,48 @@
+/* CSS for the Program component */
+.schd_section {
+    padding: 5px 0;
+    background-color: #f7f7f7;
+    text-align: center;
+    
+  }
+  .schd_section h1 {
+    font-weight: bold;
+  }
+  
+  .schd__container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1px;
+  }
+  
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .schd__items {
+    width: calc(33.33% - 20px); /* Adjust width and margin for your desired spacing */
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+  
+  .schd__item-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .schd__items h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  
+  .schd__items p {
+    font-size: 16px;
+    margin: 10px 0;
+  }

@@ -1,0 +1,23 @@
+/* Testimonials.css */
+
+/* ... Your existing styles ... */
+
+.navbar {
+    background-color:gray;
+    color: black;
+    text-align: center;
+    padding: 10px 0;
+  }
+  
+  .navbar-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .navbar-item {
+    display: inline;
+    margin: 0 15px;
+    font-size: 20px;
+   
+  }
+  

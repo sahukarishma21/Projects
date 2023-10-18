@@ -1,0 +1,57 @@
+/* Pricing.css */
+
+.book-now-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .left-panel {
+    flex: 1;
+  }
+  
+  .left-panel img {
+    max-width: 600px; /* Adjust the max width to control the image size */
+    max-height: 400px; /* Adjust the max height to control the image size */
+    width: 100%;
+    height: auto;
+    background-color: transparent;
+}
+
+  
+  .right-panel {
+    flex: 1;
+    padding: 20px;
+    background-color: #f7f7f7;
+  }
+  
+  h2 {
+    font-weight: bold;
+    font-size: 24px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    font-weight: bold;
+    display: block;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .book-now-button {
+    background-color: black;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
