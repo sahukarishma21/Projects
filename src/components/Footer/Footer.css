@@ -1,0 +1,60 @@
+.footer_main {
+    height: auto; /* Let the height adjust based on content */
+    background-color: rgb(21, 24, 29);
+    border-top: 1px solid blue;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Use repeat for better scalability */
+    border-radius: 10px;
+    padding: 1rem 0; /* Adds padding for spacing */
+    align-items: center; /* Centers the content vertically */
+    text-align: center;
+}
+
+.footer_name, .footer_mid, .footer_icon {
+    margin: 1rem;
+    margin-top: 2rem;
+}
+
+.footer_icon a {
+    margin: 0 1rem;
+    color: white;
+    font-size: 1.5rem; /* Icon size for better visibility */
+    transition: color 0.3s ease; /* Adds a smooth hover transition */
+}
+
+.footer_icon a:hover {
+    color: blue; /* Adds a hover effect */
+}
+
+/* Mobile view */
+@media screen and (max-width: 600px) {
+    .footer_main {
+        grid-template-columns: 1fr; /* Stacks the footer sections vertically */
+        margin-top: 83vh; /* Adjust top margin for mobile */
+        width: 100%;
+        padding: 2rem 1rem; /* Added padding for better spacing */
+    }
+
+    .footer_name, .footer_mid, .footer_icon {
+        margin-top: 1rem; /* Reduced margin for mobile */
+    }
+
+    .footer_icon {
+        display: flex; /* Use flexbox for icons */
+        justify-content: center; /* Center icons horizontally */
+        flex-wrap: wrap; /* Allows wrapping of icons on smaller screens */
+    }
+
+    .footer_icon a {
+        font-size: 1.5rem; /* Icon size for better visibility */
+        margin: 0 0.5rem; /* Adjust spacing for icons */
+    }
+
+    .footer_mid {
+        margin: 1rem 0; /* Center mid-section on mobile */
+    }
+
+    .footer_name {
+        margin: 1rem 0; /* Center name section on mobile */
+    }
+}

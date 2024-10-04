@@ -19,7 +19,8 @@
 }
 .contact__option:hover{
     background: transparent;
-    background-color: var(--color-primary-variant);
+    background-color:skyblue;
+    color:black
 }
 .cantact__icon{
     font-size: 1.5rem;
@@ -41,11 +42,16 @@ input , textarea{
     width: 100%;
     padding: 1.5rem;
     border-radius: 0.5rem;
-    background: transparent;
+    background:whitesmoke;
     border: 2px solid var(--color-primary-variant);
     resize: none;
-    color: #fff;
+    color: white;
     font-size: 1rem;
+}
+.con{
+    color: white;
+    text-align: center;
+    padding-bottom: 15px;
 }
 
 

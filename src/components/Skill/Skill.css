@@ -5,6 +5,10 @@
     border-radius: 8px;
     background-color: #fff;
     }
+    .ski{
+        text-align: center;
+        padding-bottom: 15px;
+    }
     
     .skill__frontend h2{
         color: #fff;
@@ -20,7 +24,7 @@
        
     }
     .skill__container{
-       box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px, rgb(31, 193, 27) 0px 0px 0px 6px;
+       box-shadow: rgb(255, 85, 85) 0px 0px 0px 3px, rgb(193, 27, 143) 0px 0px 0px 6px;
        border-radius: 5px;
     }
     
