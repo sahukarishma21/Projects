@@ -1,5 +1,5 @@
 import React from 'react'
-import CV from '../../assets/Karishma Sahu Resume (2).pdf';
+import CV from '../../assets/KARISHMASAHU FINAL CV.pdf';
 
 export default function Resume() {
   return (
